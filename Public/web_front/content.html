@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etago.Admin</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="description" content="Outline Admin Theme">
+    <meta name="author" content="KaijuThemes">
+
+    <link type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600' rel='stylesheet'>
+
+    <link type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">        <!-- Font Awesome -->
+    <link type="text/css" href="assets/fonts/themify-icons/themify-icons.css" rel="stylesheet">              <!-- Themify Icons -->
+    <link type="text/css" href="assets/fonts/weather-icons/css/weather-icons.min.css" rel="stylesheet">      <!-- Weather Icons -->
+
+    <link rel="stylesheet" href="assets/css/styles-alternative.css" id="theme">             <!-- Default CSS: Altenate Style -->
+    <link rel="prefetch alternate stylesheet" href="assets/css/styles.css">                 <!-- Prefetched Secondary Style -->
+    <link type="text/css" href="assets/plugins/codeprettifier/prettify.css" rel="stylesheet">                <!-- Code Prettifier -->
+    <link type="text/css" href="assets/plugins/iCheck/skins/minimal/blue.css" rel="stylesheet">              <!-- iCheck -->
+
+    <!--[if lt IE 10]>
+        <script type="text/javascript" src="assets/js/media.match.min.js"></script>
+        <script type="text/javascript" src="assets/js/respond.min.js"></script>
+        <script type="text/javascript" src="assets/js/placeholder.min.js"></script>
+    <![endif]-->
+    <!-- The following CSS are included as plugins and can be removed if unused-->
+    
+<link type="text/css" href="assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet"> 						<!-- FullCalendar -->
+<link type="text/css" href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"> 			<!-- jVectorMap -->
+<link type="text/css" href="assets/plugins/switchery/switchery.css" rel="stylesheet">   							<!-- Switchery -->
+
+<link type="text/css" href="assets/plugins/charts-chartistjs/chartist.min.css" rel="stylesheet"> 					<!-- Chartist -->
+<link type="text/css" href="assets/plugins/gridforms/gridforms/gridforms.css" rel="stylesheet">                                     <!-- Gridforms -->
+<link type="text/css" href="assets/css/card.css" rel="stylesheet">             
+<!-- Gridforms -->
+<style type="text/css">
+	li{list-style: none;}
+	.ContentList{padding: 0px;margin: 0px;}
+	.ContentList li{float:left;width: 208px;height: 280px;border: 1px solid #eeeeee;margin: 8px;}
+	.ImgBox{width: 200px;height: 200px;margin: 4px;position: relative;}
+	.ImgBox img{max-width: 100%;}
+	.ImgBox .jubao{width: 70px;height: 35px;background: #c84b4b;color: #fff;text-align: center;line-height: 35px;font-size: 16px;position: absolute;right: 0px;top: 6px;}
+	.ImgBox .jubaoNone{display: none;}
+	.ImgBox .ImgDetail{width: 200px;height: 40px;line-height: 40px;background: rgba(0,0,0,0.6);padding: 0px 5px;color: #fff;position: absolute;bottom: 0px;left: 0px;margin: 0px;overflow:hidden;text-overflow:ellipsis;}
+	.nameBox{height: 30px;line-height: 30px;font-size: 16px;color: #263238;padding: 0px 4px;}
+	.nameBox .cName{float: left;width: 100px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+	.nameBox .cSprice,.nameBox a{float: right;width: 72px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+	.nameBox .cTime{font-size: 12px;color: #9e9e9e;}
+	.nameBox a{ color: #263238;font-size: 18px;margin-left: 6px;display: block;width: 20px;}
+	.dis{display: none;}
+</style>
+    </head>
+
+    <body class="animated-content">
+        
+    
+<div class="extrabar-underlay"></div>
+
+<header id="topnav" class="navbar navbar-bluegray navbar-fixed-top">
+
+	<div class="logo-area">
+		<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+			<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
+				<span class="icon-bg">
+					<i class="ti ti-shift-left"></i>
+				</span>
+			</a>
+		</span>
+		
+		<a class="navbar-brand" href="index.html">Etago.Admin</a>
+
+
+	</div><!-- logo-area -->
+    <div class="yamm navbar-left navbar-collapse collapse in">
+
+    </div>
+
+
+    <ul class="nav navbar-nav toolbar pull-right">
+        <li class="toolbar-icon-bg hidden-xs" id="trigger-fullscreen">
+            <a href="#" class="toggle-fullscreen"><span class="icon-bg"><i class="ti ti-fullscreen"></i></span></i></a>
+        </li>
+    </ul>
+</header>
+        <div id="wrapper">
+            <div id="layout-static">
+                <div class="static-sidebar-wrapper sidebar-bluegray">
+                    <div class="static-sidebar">
+                        <div class="sidebar">
+	<div class="widget">
+        <div class="widget-body">
+            <div class="userinfo">
+                <div class="avatar">
+                    <img src="assets/img/26.png" class="img-responsive img-circle"> 
+                </div>
+                <div class="info">
+                    <span class="username">  Jim He &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span class="useremail">jim@etacar.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="widget stay-on-collapse" id="widget-sidebar">
+        <nav class="widget-body">
+        	<ul class="acc-menu"></ul>
+        </nav>
+    </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="static-content-wrapper">
+                    <div class="static-content">
+                        <div class="page-content">
+                            <ol class="breadcrumb">
+                                
+<li class=""><a href="index.html">Home</a></li>
+<li class="active"><a href="index.html">内容管理</a></li>
+
+                            </ol>
+                            <div class="page-heading">
+                                
+                            </div>
+                            <div class="container-fluid">
+                                
+<div class="row">
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+            
+        </div>
+        <ul class="panel-body">
+            <form class="grid-form">
+                <fieldset>
+                    <legend>搜索</legend>
+                    <div data-row-span="7">
+                        <div data-field-span="1">
+                            <label>ID</label>
+                            <input class="id" type="text">
+                        </div>
+                        <div data-field-span="1">
+                            <label>名称(模糊搜索)</label>
+                            <input class="name" type="text">
+                        </div>
+                        <div data-field-span="1">
+                            <label>内容(模糊搜索)</label>
+                            <input class="Content" type="text">
+                        </div>
+                        <div data-field-span="1">
+                            <label>Tag(仅限单个Tag搜索)</label>
+                            <input class="tag" type="text">
+                        </div>
+                        
+                        <div data-field-span="1">
+                            <label>城市</label>
+                            <select class="city_id" id="cityList">
+                              <option value="" title="Select City">Select City</option>  
+                            </select>
+                        </div>
+                        <div data-field-span="1">
+                            <label>发布日期</label>
+                            <input class="add_time" type="date">
+
+                        </div>
+                        <div data-field-span="1">
+                            
+                        </div>
+                    </div>
+                    <div data-row-span="7">
+                        <div data-field-span="1">
+                            <label>用户ID</label>
+                            <input class="user_id" type="text" value="">
+                        </div>
+                        <div data-field-span="1">
+                            <label>用户名称</label>
+                            <input class="user_name" type="text" value="">
+                        </div>
+                        
+                        <div data-field-span="1">
+                            <label>被[用户ID]喜欢的内容</label>
+                            <input class="like_user_id" type="text" value="">
+                        </div>
+                        <div data-field-span="2">
+                            <label>内容状态</label>
+                            <label><input type="checkbox"> 正常</label> &nbsp;
+                            <label><input class="status" type="checkbox"> 已删除 </label> &nbsp;
+                            <label><input class="report" type="checkbox"> 被举报 </label> &nbsp;
+                        </div>
+                        <div data-field-span="1">
+                            <label>内容类型</label>
+                            <label><input class="sale_type" type="checkbox"> 销售</label> &nbsp;
+                            <label><input class="nosale_type" type="checkbox"> 非销售</label> &nbsp;
+                        </div>
+                        <div data-field-span="1">
+                            <label>  </label>
+                            <button class="btn-primary btn search">搜索</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <ul class="ContentList" id="li_pic">
+            	
+            </ul>
+
+
+        </div>
+        
+        <div class="panel-footer">
+            <div class="panel-footer pageBox" style="text-align: center;">
+			<ul id="pagination" class="pagination m-n"></ul>
+			</div>
+        </div>
+    </div>
+</div>
+
+
+
+                            </div> <!-- .container-fluid -->
+                        </div> <!-- #page-content -->
+                    <footer>
+					    <div class="clearfix">
+					        <ul class="list-unstyled list-inline pull-left">
+					            <li><h6 style="margin: 0;">&copy; 2016 Etago.com</h6></li>
+					        </ul>
+					        <button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="ti ti-arrow-up"></i></button>
+					    </div>
+					</footer>
+                </div>
+            </div>
+        </div>
+        
+        
+
+<!-- Modal -->
+<!-- alert 模态框   -->
+    <div class="modal fade bs-example-modal-sm" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		      <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">删除</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>确定要删除吗？</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default btn-modal-cancel" data-dismiss="modal">取消</button>
+			        <button type="button" class="btn btn-primary btn-modal-save">确定</button>
+			      </div>
+			    </div>
+		    </div>
+		</div>
+	</div>
+<!-- Modal2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">还原</h4>
+      </div>
+      <div class="modal-body">
+        确定还原？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Load site level scripts -->
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
+
+<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script> 							<!-- Load jQuery -->
+<script type="text/javascript" src="assets/js/jqueryui-1.10.3.min.js"></script> 							<!-- Load jQueryUI -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script> 								<!-- Load Bootstrap -->
+<script type="text/javascript" src="assets/js/enquire.min.js"></script> 									<!-- Load Enquire -->
+
+<script type="text/javascript" src="assets/plugins/velocityjs/velocity.min.js"></script>					<!-- Load Velocity for Animated Content -->
+<script type="text/javascript" src="assets/plugins/velocityjs/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="assets/plugins/wijets/wijets.js"></script>     						<!-- Wijet -->
+
+<script type="text/javascript" src="assets/plugins/codeprettifier/prettify.js"></script> 				<!-- Code Prettifier  -->
+<script type="text/javascript" src="assets/plugins/bootstrap-switch/bootstrap-switch.js"></script> 		<!-- Swith/Toggle Button -->
+
+<script type="text/javascript" src="assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>  <!-- Bootstrap Tabdrop -->
+
+<script type="text/javascript" src="assets/plugins/iCheck/icheck.min.js"></script>     					<!-- iCheck -->
+
+<script type="text/javascript" src="assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script> <!-- nano scroller -->
+<script type="text/javascript" src="assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script> <!-- Mousewheel support needed for Mapael -->
+
+<script type="text/javascript" src="assets/plugins/sparklines/jquery.sparklines.min.js"></script> 			 <!-- Sparkline -->
+
+<script type="text/javascript" src="assets/js/application.js"></script>
+<script type="text/javascript" src="assets/demo/demo.js"></script>
+<script type="text/javascript" src="assets/demo/demo-switcher.js"></script>
+
+<!-- End loading site level scripts -->
+    
+    <!-- Load page level scripts-->
+    
+<script type="text/javascript" src="assets/plugins/charts-chartistjs/chartist.min.js"></script>               <!-- Chartist -->
+<script type="text/javascript" src="assets/plugins/charts-chartistjs/chartist-plugin-tooltip.js"></script>    <!-- Chartist -->
+
+<script type="text/javascript" src="assets/plugins/charts-chartjs/Chart.js"></script>  						<!-- Chart.js -->
+<script src="assets/js/jquery.twbsPagination.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="assets/plugins/easypiechart/jquery.easypiechart.js"></script> 			<!-- EasyPieChart -->
+<script type="text/javascript" src="assets/plugins/gridforms/gridforms/gridforms.js"></script>  
+<!--<script type="text/javascript" src="assets/demo/demo-index.js"></script>--> 									<!-- Initialize scripts for this page-->
+<script src="assets/js/ajax/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/ajax/content.js" type="text/javascript" charset="utf-8"></script>
+    <!-- End loading page level scripts-->
+
+    </body>
+</html>

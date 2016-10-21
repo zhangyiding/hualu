@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Etago.Admin</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="description" content="Outline Admin Theme">
+		<meta name="author" content="KaijuThemes">
+
+		<link type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600' rel='stylesheet'>
+
+    <link type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">         
+    <link type="text/css" href="assets/fonts/themify-icons/themify-icons.css" rel="stylesheet">               
+    <link type="text/css" href="assets/fonts/weather-icons/css/weather-icons.min.css" rel="stylesheet">       
+
+		<link rel="stylesheet" href="assets/css/styles-alternative.css" id="theme">
+		<!-- Default CSS: Altenate Style -->
+		<link rel="prefetch alternate stylesheet" href="assets/css/styles.css">
+		<!-- Prefetched Secondary Style -->
+
+		<link type="text/css" href="assets/plugins/codeprettifier/prettify.css" rel="stylesheet">
+		<!-- Code Prettifier -->
+		<link type="text/css" href="assets/plugins/iCheck/skins/minimal/blue.css" rel="stylesheet">
+		<!-- iCheck -->
+
+		<!--[if lt IE 10]>
+        <script type="text/javascript" src="assets/js/media.match.min.js"></script>
+        <script type="text/javascript" src="assets/js/respond.min.js"></script>
+        <script type="text/javascript" src="assets/js/placeholder.min.js"></script>
+    <![endif]-->
+		<!-- The following CSS are included as plugins and can be removed if unused-->
+
+		<link type="text/css" href="assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+		<!-- FullCalendar -->
+		<link type="text/css" href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+		<!-- jVectorMap -->
+		<link type="text/css" href="assets/plugins/switchery/switchery.css" rel="stylesheet">
+		<!-- Switchery -->
+
+		<link type="text/css" href="assets/plugins/charts-chartistjs/chartist.min.css" rel="stylesheet">
+		<!-- Chartist -->
+		<link type="text/css" href="assets/plugins/gridforms/gridforms/gridforms.css" rel="stylesheet">
+		<!-- Gridforms -->
+
+	</head>
+
+	<body class="animated-content">
+
+		<div class="extrabar-underlay"></div>
+
+		<header id="topnav" class="navbar navbar-bluegray navbar-fixed-top">
+
+			<div class="logo-area">
+				<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+			<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
+				<span class="icon-bg">
+					<i class="ti ti-shift-left"></i>
+				</span>
+				</a>
+				</span>
+
+				<a class="navbar-brand" href="index.html">Etago.Admin</a>
+
+			</div>
+			<!-- logo-area -->
+			<div class="yamm navbar-left navbar-collapse collapse in">
+
+			</div>
+
+			<ul class="nav navbar-nav toolbar pull-right">
+				<li class="toolbar-icon-bg hidden-xs" id="trigger-fullscreen">
+					<a href="#" class="toggle-fullscreen"><span class="icon-bg"><i class="ti ti-fullscreen"></i></span></i>
+					</a>
+				</li>
+			</ul>
+		</header>
+		<div id="wrapper">
+			<div id="layout-static">
+				<div class="static-sidebar-wrapper sidebar-bluegray">
+					<div class="static-sidebar">
+						<div class="sidebar">
+							<div class="widget">
+								<div class="widget-body">
+									<div class="userinfo">
+										<div class="avatar">
+											<img src="assets/img/26.png" class="img-responsive img-circle">
+										</div>
+										<div class="info">
+											<span class="username">  Jim He &nbsp;&nbsp;&nbsp;&nbsp;</span>
+											<span class="useremail">jim@etacar.com</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="widget stay-on-collapse" id="widget-sidebar">
+								<nav class="widget-body">
+						        	<ul class="acc-menu"></ul>
+						        </nav>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="static-content-wrapper">
+					<div class="static-content">
+						<div class="page-content">
+							<ol class="breadcrumb">
+
+								<li class="">
+									<a href="index.html">Home</a>
+								</li>
+								<li class="active">
+									<a href="index.html">城市管理</a>
+								</li>
+
+							</ol>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="panel panel-default" data-widget='{"draggable": "false"}'>
+											<div class="panel-heading">
+												<h2>城市列表</h2>
+												<div class="panel-ctrls">
+													<a data-toggle="modal" href="#add_city" class="btn btn-primary">添加城市</a>
+												</div>
+												<div class="options">
+												</div>
+											</div>
+											<div class="panel-heading">
+												注：城市主要配置部分特殊设置
+											</div>
+											<div class="panel-body">
+												<form class="grid-form">
+													<fieldset>
+														<div data-row-span="7">
+															<div data-field-span="1">
+																<label>城市ID</label>
+																<input id="cityId" type="text">
+															</div>
+															<div data-field-span="1">
+																<label>城市名</label>
+																<input id="cityName" type="text">
+															</div>
+															<div data-field-span="1">
+																<label>国家</label>
+																<select id="countryId" class="form-control countryList" name=""></select>
+															</div>
+															<div data-field-span="3">
+
+															</div>
+															<div data-field-span="1">
+																<!--<label>提交</label>-->
+																<button id="search" class="btn-primary btn">搜索</button>
+															</div>
+														</div>
+													</fieldset>
+												</form>
+												<table class="table table-hover m-n">
+													<thead>
+														<tr>
+															<th>ID</th>
+															<th>城市名</th>
+															<th>国家</th>
+															<th>佣金比例</th>
+															<th>中央坐标</th>
+															<th>城市范围</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody class="cityListInfo">
+													</tbody>
+												</table>
+											</div>
+											<div class="panel-footer">
+												<div class="panel-footer pageBox" style="text-align: center;">
+													<ul id="pagination" class="pagination m-n"></ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="modal fade" id="add_city" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">添加城市</h2>
+											</div>
+											<div class="modal-body">
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div class="tab-content">
+																		<div class="tab-pane active" id="horizontal-form">
+																			<form class="form-horizontal">
+																				<div class="form-group">
+																					<label for="focusedinput" class="col-sm-2 control-label">城市名</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="add_cityName" placeholder="">
+																					</div>
+																					<div class="col-sm-2">
+
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">国家</label>
+																					<div class="col-sm-8">
+																						<select class="form-control countryList" id="add_CountryName" name=""></select>
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">佣金比例</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="add_CommissionRate" placeholder="10">
+																					</div>
+																					<div class="col-sm-2">
+																						%
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">城市中央坐标</label>
+																					<div class="col-sm-8" id="add_cityCore"></div>
+																					<div class="col-sm-2">
+																						<a data-toggle="modal" href="#city_map_pointAdd" data-style='addCore' class="btn btn-info-alt btn-s ">编辑</a>
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">城市范围</label>
+																					<div class="col-sm-8" id="add_cityMinMax"></div>
+																					<div class="col-sm-2">
+																						<a data-toggle="modal" href="#city_map_pointAdd" data-style='addMinMax' class="btn btn-info-alt btn-s ">编辑</a>
+																					</div>
+																				</div>
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" id="addCityInfo" class="btn btn-primary">添加</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+								<div class="modal fade" id="edit_city" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">编辑城市</h2>
+											</div>
+											<div class="modal-body">
+
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div class="tab-content">
+																		<div class="tab-pane active" id="horizontal-form">
+																			<form class="form-horizontal">
+																				<div class="form-group">
+																					<label for="focusedinput" class="col-sm-2 control-label">城市名</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="洛杉矶" class="form-control" id="m_CityName" placeholder="Default Input">
+																					</div>
+																					<div class="col-sm-2">
+
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">国家</label>
+																					<div class="col-sm-8">
+																						<select class="form-control countryList" id="m_CountryName" value="" name=""></select>
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">佣金比例</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="10" class="form-control" id="m_CommissionRate" placeholder="10">
+																					</div>
+																					<div class="col-sm-2">
+																						%
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">城市中央坐标</label>
+																					<div class="col-sm-8" id="m_CornLocation"></div>
+																					<div class="col-sm-2">
+																						<a data-toggle="modal" data-edit="core" href="#city_map_pointEdit" class="btn btn-info-alt btn-s">编辑</a>
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">城市范围</label>
+																					<div class="col-sm-8" id="m_MinMaxLocation"></div>
+																					<div class="col-sm-2">
+																						<a data-toggle="modal" data-edit="minmax" href="#city_map_pointEdit" class="btn btn-info-alt btn-s">编辑</a>
+																					</div>
+																				</div>
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+												<button type="button" id="editCityInfo" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+								<div class="modal fade" id="city_map_point" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">城市地图</h2>
+											</div>
+											<div class="modal-body">
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div id="fusion" style="height: 250px"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+								<div class="modal fade" id="city_map_pointEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">城市地图</h2>
+											</div>
+											<div class="modal-body">
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+															<!--<div class="alert alert-inverse">
+								                <button type="button" class="close" data-dismiss="alert">&times;</button>
+								            </div>-->
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div id="mapEdit" style="height: 250px"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<input type="hidden" name="" id="citySite1" />
+											<input type="hidden" name="" id="citySite2" />
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary saveEdit" data-dismiss="modal">Save</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+								<div class="modal fade" id="city_map_pointAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">城市地图</h2>
+											</div>
+											<div class="modal-body">
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div id="mapAdd" style="height: 250px"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary saveAdd" data-dismiss="modal">Save</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+							</div>
+							<!-- .container-fluid -->
+						</div>
+						<!-- #page-content -->
+					</div>
+					<footer>
+						<div class="clearfix">
+							<ul class="list-unstyled list-inline pull-left">
+								<li>
+									<h6 style="margin: 0;">&copy; 2016 Etago.com</h6></li>
+							</ul>
+							<button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="ti ti-arrow-up"></i></button>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<!-- alert 模态框   -->
+		<div class="modal fade bs-example-modal-sm" id="modalAlert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title"></h4>
+						</div>
+						<div class="modal-body">
+							<p></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default btn-modal-cancel" data-dismiss="modal">取消</button>
+							<button type="button" class="btn btn-primary btn-modal-save">确定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Load site level scripts -->
+
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
+
+		<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+		<!-- Load jQuery -->
+		<script type="text/javascript" src="assets/js/jqueryui-1.10.3.min.js"></script>
+		<!-- Load jQueryUI -->
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<!-- Load Bootstrap -->
+		<script type="text/javascript" src="assets/js/enquire.min.js"></script>
+		<!-- Load Enquire -->
+
+		<script type="text/javascript" src="assets/plugins/velocityjs/velocity.min.js"></script>
+		<!-- Load Velocity for Animated Content -->
+		<script type="text/javascript" src="assets/plugins/velocityjs/velocity.ui.min.js"></script>
+
+		<script type="text/javascript" src="assets/plugins/wijets/wijets.js"></script>
+		<!-- Wijet -->
+
+		<script type="text/javascript" src="assets/plugins/codeprettifier/prettify.js"></script>
+		<!-- Code Prettifier  -->
+		<script type="text/javascript" src="assets/plugins/bootstrap-switch/bootstrap-switch.js"></script>
+		<!-- Swith/Toggle Button -->
+
+		<script type="text/javascript" src="assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>
+		<!-- Bootstrap Tabdrop -->
+
+		<script type="text/javascript" src="assets/plugins/iCheck/icheck.min.js"></script>
+		<!-- iCheck -->
+
+		<script type="text/javascript" src="assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script>
+		<!-- nano scroller -->
+		<script type="text/javascript" src="assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+		<!-- Mousewheel support needed for Mapael -->
+
+		<script type="text/javascript" src="assets/plugins/sparklines/jquery.sparklines.min.js"></script>
+		<!-- Sparkline -->
+
+		<script type="text/javascript" src="assets/js/application.js"></script>
+		<script type="text/javascript" src="assets/demo/demo.js"></script>
+		<script type="text/javascript" src="assets/demo/demo-switcher.js"></script>
+
+		<!-- End loading site level scripts -->
+
+		<!-- Load page level scripts-->
+
+		<script type="text/javascript" src="assets/plugins/charts-chartistjs/chartist.min.js"></script>
+		<!-- Chartist -->
+		<script type="text/javascript" src="assets/plugins/charts-chartistjs/chartist-plugin-tooltip.js"></script>
+		<!-- Chartist -->
+
+		<script type="text/javascript" src="assets/plugins/charts-chartjs/Chart.js"></script>
+		<!-- Chart.js -->
+
+		<script type="text/javascript" src="assets/plugins/easypiechart/jquery.easypiechart.js"></script>
+		<!-- EasyPieChart -->
+		<!-- Page -->
+		<script src="assets/js/jquery.twbsPagination.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="assets/plugins/gmaps/gmaps.js"></script> 	-->
+		<!--<script type="text/javascript" src="assets/demo/demo-index.js"></script>-->
+		<script src="assets/js/ajax/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/ajax/city.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8IXpNgfA7uD-Xb0jEqhkEdB7j3gbgOiE&signed_in=true" async defer></script>
+		<script src="assets/js/ajax/cityMap.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

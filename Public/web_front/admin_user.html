@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Etago.Admin</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="description" content="Outline Admin Theme">
+		<meta name="author" content="KaijuThemes">
+
+		<link type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600' rel='stylesheet'>
+
+		<link type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link type="text/css" href="assets/fonts/themify-icons/themify-icons.css" rel="stylesheet">
+		<!-- Themify Icons -->
+		<link type="text/css" href="assets/fonts/weather-icons/css/weather-icons.min.css" rel="stylesheet">
+		<!-- Weather Icons -->
+
+		<link rel="stylesheet" href="assets/css/styles-alternative.css" id="theme">
+		<!-- Default CSS: Altenate Style -->
+		<link rel="prefetch alternate stylesheet" href="assets/css/styles.css">
+		<!-- Prefetched Secondary Style -->
+
+		<link type="text/css" href="assets/plugins/codeprettifier/prettify.css" rel="stylesheet">
+		<!-- Code Prettifier -->
+		<link type="text/css" href="assets/plugins/iCheck/skins/minimal/blue.css" rel="stylesheet">
+		<!-- iCheck -->
+
+		<!--[if lt IE 10]>
+        <script type="text/javascript" src="assets/js/media.match.min.js"></script>
+        <script type="text/javascript" src="assets/js/respond.min.js"></script>
+        <script type="text/javascript" src="assets/js/placeholder.min.js"></script>
+    <![endif]-->
+		<!-- The following CSS are included as plugins and can be removed if unused-->
+
+		<link type="text/css" href="assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+		<!-- FullCalendar -->
+		<link type="text/css" href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+		<!-- jVectorMap -->
+		<link type="text/css" href="assets/plugins/switchery/switchery.css" rel="stylesheet">
+		<!-- Switchery -->
+
+		<link type="text/css" href="assets/plugins/charts-chartistjs/chartist.min.css" rel="stylesheet">
+		<!-- Chartist -->
+		<link type="text/css" href="assets/plugins/gridforms/gridforms/gridforms.css" rel="stylesheet">
+		<!-- Gridforms -->
+
+	</head>
+
+	<body class="animated-content">
+
+		<div class="extrabar-underlay"></div>
+
+		<header id="topnav" class="navbar navbar-bluegray navbar-fixed-top">
+
+			<div class="logo-area">
+				<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+			<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
+				<span class="icon-bg">
+					<i class="ti ti-shift-left"></i>
+				</span>
+				</a>
+				</span>
+
+				<a class="navbar-brand" href="index.html">Etago.Admin</a>
+
+			</div>
+			<!-- logo-area -->
+			<div class="yamm navbar-left navbar-collapse collapse in">
+
+			</div>
+
+			<ul class="nav navbar-nav toolbar pull-right">
+				<li class="toolbar-icon-bg hidden-xs" id="trigger-fullscreen">
+					<a href="#" class="toggle-fullscreen"><span class="icon-bg"><i class="ti ti-fullscreen"></i></span></i>
+					</a>
+				</li>
+			</ul>
+		</header>
+		<div id="wrapper">
+			<div id="layout-static">
+				<div class="static-sidebar-wrapper sidebar-bluegray">
+					<div class="static-sidebar">
+						<div class="sidebar">
+							<div class="widget">
+								<div class="widget-body">
+									<div class="userinfo">
+										<div class="avatar">
+											<img src="assets/img/26.png" class="img-responsive img-circle">
+										</div>
+										<div class="info">
+											<span class="username">  Jim He &nbsp;&nbsp;&nbsp;&nbsp;</span>
+											<span class="useremail">jim@etacar.com</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="widget stay-on-collapse" id="widget-sidebar">
+								<nav class="widget-body">
+						        	<ul class="acc-menu"></ul>
+						        </nav>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="static-content-wrapper">
+					<div class="static-content">
+						<div class="page-content">
+							<ol class="breadcrumb">
+
+								<li class="">
+									<a href="index.html">Home</a>
+								</li>
+								<li class="active">
+									<a href="admin_user.html">管理员</a>
+								</li>
+
+							</ol>
+							<div class="container-fluid">
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="panel panel-default" data-widget='{"draggable": "false"}'>
+											<div class="panel-heading">
+												<h2>管理员列表</h2>
+												<div class="panel-ctrls">
+													<a data-toggle="modal" href="#add_admin_user" class="btn btn-primary btn_add_admin">添加管理员</a>
+												</div>
+												<div class="options">
+												</div>
+											</div>
+											<div class="panel-heading">
+												<p>注：Admin用户不可以禁止登录，不可以修改权限，此用户超级权限。按照先显示正常状态用户，然后是禁用用户，排序按添加时间倒序<br>工号不同于自动ID，工号由HR部门设计，并手工填写</p>
+											</div>
+											<div class="panel-body">
+												<form class="grid-form">
+													<fieldset>
+														<div data-row-span="7">
+															<div data-field-span="1">
+																<label>ID</label>
+																<input id="u_id" type="text">
+															</div>
+															<div data-field-span="1">
+																<label>工号</label>
+																<input id="u_job_code" type="text">
+															</div>
+															<div data-field-span="1">
+																<label>姓名</label>
+																<input id="u_username" type="text">
+															</div>
+															<div data-field-span="1">
+																<label>邮箱</label>
+																<input id="u_email" type="text">
+															</div>
+															<div data-field-span="1">
+																<label>电话</label>
+																<input id="u_tel" type="text">
+															</div>
+															<div data-field-span="1">
+																<label>城市</label>
+																<select id="u_city_id"></select>
+															</div>
+															<div data-field-span="1">
+																<label>提交</label>
+																<button id="u_sub" class="btn-primary btn">搜索</button>
+															</div>
+														</div>
+													</fieldset>
+												</form>
+												<table class="table table-hover m-n">
+													<thead>
+														<tr>
+															<th>ID</th>
+															<th>工号</th>
+															<th>姓名</th>
+															<th>邮箱</th>
+															<th>电话</th>
+															<th>城市</th>
+															<th>职位</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody class="userList">
+
+													</tbody>
+												</table>
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="modal fade" id="add_admin_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">添加管理员</h2>
+											</div>
+											<div class="modal-body">
+
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="alert alert-inverse">
+																提示提示! 密码系统自动生成，创建完成后发送邮件到该管理员邮箱，内容包括登录地址，登录名，登录密码等。 工号不同于自动ID，工号由HR部门设计，并手工填写
+																<button type="button" class="close" data-dismiss="alert">&times;</button>
+															</div>
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div class="tab-content">
+																		<div class="tab-pane active" id="add-Administrators">
+																			<form class="form-horizontal">
+																				<div class="form-group">
+																					<label for="focusedinput" class="col-sm-2 control-label">姓名</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="add_nickname" placeholder="姓名">
+																					</div>
+																					<div class="col-sm-2">
+
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">工号</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="add_job_code" placeholder="工号">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">电子邮箱</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="add_email" placeholder="电子邮箱">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">电话</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="add_tel" placeholder="区码+电话">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">职务</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="add_post" placeholder="职务">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">密码</label>
+																					<div class="col-sm-8">
+																						<input type="password" value="" class="form-control" id="add_password" placeholder="密码">
+																					</div>
+																					<div class="col-sm-2">
+																						<a href="javascript:;" class="btn btn-success-alt btn-s createPwd">生成密码</a>
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="selector1" class="col-sm-2 control-label">所属组</label>
+																					<div class="col-sm-8">
+																						<select name="selector1" id="add_group" class="form-control"></select>
+																					</div>
+																				</div>
+
+																				<div class="form-group">
+																					<label for="selector1" class="col-sm-2 control-label">所属城市</label>
+																					<div class="col-sm-8">
+																						<select name="selector1" id="add_city_id" class="form-control"></select>
+																					</div>
+																				</div>
+																				<!--<input type="hidden" id="s_id" value="" />
+                                <input type="hidden" id="s_password" value="" />-->
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary btn_Create">添加</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+								<div class="modal fade" id="edit_admin_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">编辑管理员</h2>
+											</div>
+											<div class="modal-body">
+
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="alert alert-inverse">
+																提示提示! 密码只要点击了自动生成，确认修改后则发送邮件给该管理员邮箱
+																<button type="button" class="close" data-dismiss="alert">&times;</button>
+															</div>
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div class="tab-content">
+																		<div class="tab-pane active" id="edit-form">
+																			<form class="form-horizontal">
+																				<div class="form-group">
+																					<label for="focusedinput" class="col-sm-2 control-label">姓名</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="nickname" placeholder="姓名">
+																					</div>
+																					<div class="col-sm-2">
+
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">工号</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="job_code" placeholder="工号">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">电子邮箱</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="email" placeholder="电子邮箱">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="disabledinput" class="col-sm-2 control-label">电话</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="tel" placeholder="区码+电话">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">职务</label>
+																					<div class="col-sm-8">
+																						<input type="text" value="" class="form-control" id="post" placeholder="职务">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="inputPassword" class="col-sm-2 control-label">密码</label>
+																					<div class="col-sm-8">
+																						<input type="password" value="" class="form-control" id="password" placeholder="密码">
+																					</div>
+																					<div class="col-sm-2">
+																						<a href="javascript:;" class="btn btn-success-alt btn-s createPwd">生成密码</a>
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label for="selector1" class="col-sm-2 control-label">所属组</label>
+																					<div class="col-sm-8">
+																						<select name="selector1" id="s_group" class="form-control"></select>
+																					</div>
+																				</div>
+
+																				<div class="form-group">
+																					<label for="selector1" class="col-sm-2 control-label">所属城市</label>
+																					<div class="col-sm-8">
+																						<select name="selector1" id="s_city_id" class="form-control"></select>
+																					</div>
+																				</div>
+																				<input type="hidden" id="s_id" value="" />
+																				<input type="hidden" id="s_password" value="" />
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary save_Btn">确定</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+								<div class="modal fade" id="admin_user_access" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h2 class="modal-title">设置管理员权限</h2>
+											</div>
+											<div class="modal-body">
+
+												<div data-widget-group="group1">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="alert alert-inverse">
+																其他权限默认全开
+																<button type="button" class="close" data-dismiss="alert">&times;</button>
+															</div>
+															<div class="panel panel-midnightblue" data-widget='{"draggable": "false"}'>
+																<div class="panel-body">
+																	<div class="tab-content">
+																		<div class="tab-pane active" id="set_quanxian">
+																			<form class="form-horizontal" id="quanxianbianji">
+																				<!--<div class="form-group">
+                                    <label class="col-sm-2 control-label">管理员</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看列表
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox2" value="option2"> 查看详情
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3"> 编辑
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">管理组</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看列表
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox2" value="option2"> 查看详情
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3"> 编辑
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">管理日志</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看列表
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">全局设置</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3"> 编辑
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">城市管理</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看列表
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox2" value="option2"> 查看详情
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3"> 编辑
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">用户管理</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看列表
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox2" value="option2"> 查看详情
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3"> 编辑
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">内容管理</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看列表
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox2" value="option2"> 查看详情
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3"> 编辑
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">订单管理</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看列表
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox2" value="option2"> 查看详情
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3"> 编辑
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">数据统计</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">财务统计</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1"> 查看
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">其他权限</label>
+                                    <div class="col-sm-8">
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox1" value="option1" checked="checked"> 个人设置
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox2" value="option2" checked="checked"> 公司通讯录
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3" checked="checked"> 帮助
+                                        </label>
+                                        <label class="checkbox-inline icheck">
+                                            <input type="checkbox" id="inlinecheckbox3" value="option3" checked="checked"> 首页
+                                        </label>
+                                    </div>
+                                </div>-->
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary quanxiantj">添加</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+
+							</div>
+							<!-- .container-fluid -->
+						</div>
+						<!-- #page-content -->
+						<div class="panel-footer">
+							<div class="panel-footer pageBox" style="text-align: center;">
+								<ul id="pagination" class="pagination m-n"></ul>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<div class="clearfix">
+							<ul class="list-unstyled list-inline pull-left">
+								<li>
+									<h6 style="margin: 0;">&copy; 2016 Etago.com</h6></li>
+							</ul>
+							<button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="ti ti-arrow-up"></i></button>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<!-- Load site level scripts -->
+
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
+
+		<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+		<!-- Load jQuery -->
+		<script type="text/javascript" src="assets/js/jqueryui-1.10.3.min.js"></script>
+		<!-- Load jQueryUI -->
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+		<!-- Load Bootstrap -->
+		<script type="text/javascript" src="assets/js/enquire.min.js"></script>
+		<!-- Load Enquire -->
+
+		<script type="text/javascript" src="assets/plugins/velocityjs/velocity.min.js"></script>
+		<!-- Load Velocity for Animated Content -->
+		<script type="text/javascript" src="assets/plugins/velocityjs/velocity.ui.min.js"></script>
+
+		<script type="text/javascript" src="assets/plugins/wijets/wijets.js"></script>
+		<!-- Wijet -->
+
+		<script type="text/javascript" src="assets/plugins/codeprettifier/prettify.js"></script>
+		<!-- Code Prettifier  -->
+		<script type="text/javascript" src="assets/plugins/bootstrap-switch/bootstrap-switch.js"></script>
+		<!-- Swith/Toggle Button -->
+
+		<script type="text/javascript" src="assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>
+		<!-- Bootstrap Tabdrop -->
+
+		<script type="text/javascript" src="assets/plugins/iCheck/icheck.min.js"></script>
+		<!-- iCheck -->
+
+		<script type="text/javascript" src="assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script>
+		<!-- nano scroller -->
+		<script type="text/javascript" src="assets/plugins/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+		<!-- Mousewheel support needed for Mapael -->
+
+		<script type="text/javascript" src="assets/plugins/sparklines/jquery.sparklines.min.js"></script>
+		<!-- Sparkline -->
+
+		<script type="text/javascript" src="assets/js/application.js"></script>
+		<script type="text/javascript" src="assets/demo/demo.js"></script>
+		<script type="text/javascript" src="assets/demo/demo-switcher.js"></script>
+
+		<!-- End loading site level scripts -->
+
+		<!-- Load page level scripts-->
+
+		<script type="text/javascript" src="assets/plugins/charts-chartistjs/chartist.min.js"></script>
+		<!-- Chartist -->
+		<script type="text/javascript" src="assets/plugins/charts-chartistjs/chartist-plugin-tooltip.js"></script>
+		<!-- Chartist -->
+
+		<script type="text/javascript" src="assets/plugins/charts-chartjs/Chart.js"></script>
+		<!-- Chart.js -->
+		<script src="assets/js/jquery.twbsPagination.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript" src="assets/plugins/easypiechart/jquery.easypiechart.js"></script>
+		<!-- EasyPieChart -->
+		<!--<script type="text/javascript" src="assets/demo/demo-index.js"></script> 									<!-- Initialize scripts for this page-->-->
+		<script src="assets/js/ajax/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/ajax/adminUser.js" type="text/javascript" charset="utf-8"></script>
+		<!-- End loading page level scripts-->
+
+	</body>
+
+</html>
