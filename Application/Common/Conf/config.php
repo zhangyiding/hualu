@@ -15,7 +15,7 @@ return array(
     'DEFAULT_MODULE' => 'Home',
 
     'UN_AUTH_CONTROLLER' => array(),
-    'UN_AUTH_ACTION' => ['Admin/Login/index', 'Admin/City/getCityList', 'admin/role/index'],
+    //'UN_AUTH_ACTION' => ['Admin/Login/index', 'Admin/City/getCityList', 'admin/role/index'],
 
     //session cookie配置
     'SESSION_AUTO_START' => true,    // 是否自动开启Session

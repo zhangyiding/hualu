@@ -12,7 +12,7 @@ class BaseController extends Controller
 {
     protected $is_login = 0;
     protected $params = array();
-    protected $userinfo = [];
+    protected $userinfo = array();
     protected $user_id = 0;
     protected $access = '';
     protected $access_list = array();
