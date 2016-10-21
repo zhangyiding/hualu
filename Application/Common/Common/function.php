@@ -926,7 +926,7 @@ function objarray_to_array($obj)
  */
 function array_values_by_key(array $array, $index = 'id', $recursion_level = 1)
 {
-    $_array = [];
+    $_array = array();
     $_recursion_level = 0;
     foreach ($array as $key => $value) {
         if (is_array($value) && $_recursion_level <= $_recursion_level) {

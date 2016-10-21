@@ -14,7 +14,7 @@ return array(
     'MODULE_ALLOW_LIST' => array('Admin', 'Home'), //模块配置
     'DEFAULT_MODULE' => 'Home',
 
-    'UN_AUTH_CONTROLLER' => [],
+    'UN_AUTH_CONTROLLER' => array(),
     'UN_AUTH_ACTION' => ['Admin/Login/index', 'Admin/City/getCityList', 'admin/role/index'],
 
     //session cookie配置

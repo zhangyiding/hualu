@@ -11,11 +11,11 @@ import("Common.Lib.ApiResp", "", ".class.php");
 class BaseController extends Controller
 {
     protected $is_login = 0;
-    protected $params = [];
+    protected $params = array();
     protected $userinfo = [];
     protected $user_id = 0;
     protected $access = '';
-    protected $access_list = [];
+    protected $access_list = array();
     protected $_res = '';
     protected $error = '';
     protected $start_time = '';
