@@ -7,7 +7,7 @@
 namespace Home\Controller;
 use Common\Controller\BaseController;
 use Think\Controller;
-class Train extends BaseController {
+class TrainController extends BaseController {
     public function index(){
         $this->display();
     }

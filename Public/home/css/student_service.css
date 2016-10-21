@@ -1,0 +1,75 @@
+/*先学习后付款*/
+.fk_title{
+	width:100%;
+	text-align:center;
+	font-size:48px;
+	margin-bottom:20px;
+}
+.fk_con{
+	margin:20px 0px;
+	width:100%;
+	text-align:center;
+}
+.fk_con_button{
+	background:#f55176;
+	color:#fff;
+	width:250px;
+	height:50px;
+	border-radius:5px;
+	line-height:50px;
+	vertical-align:middle;
+	margin:0 auto;
+	margin-bottom:30px;
+	
+}
+.fk_con_button1{
+	background:#a75fa9;
+}
+.fk_con_button2{
+	background:#71b383;
+}
+.fk p{
+	width:100%;
+	text-align:center;
+}
+.fk_bl_button{
+	background:#ffce24;
+	margin:0 auto;
+	width:250px;
+	height:80px;
+	line-height:80px;
+	font-size:30px;
+	border-radius:3px;
+	vertical-align:middle;
+	text-align:center;
+	margin-bottom:30px;
+
+}
+.fk_bl_button a{
+	text-decoration:none;
+	font-size:30px;
+	color:#816400;
+}
+.VR_intro .title_sum ul {
+    height: 60px;
+}
+.list_con .VR_intro .imgbox{
+	width:100%;
+	margin-bottom:30px;
+}
+.list_con .VR_intro .imgbox img{
+	width:1050px;
+}
+.list_con .VR_intro .stu_con{
+	width:165px;
+}
+
+.stu_con .VR_intro .stu_con .imgbox{
+	width:165px;
+}
+.stu_con_intro{
+	margin-bottom:50px;
+}
+.stu_con_intro span{
+	color:#083090;
+}

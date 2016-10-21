@@ -162,6 +162,35 @@
 	text-decoration:none;
 	color:#af8b0f;
 }
+/*------------高端教育_人才定制开始了--------------*/
+
+.talent .edu_con .edu_list{
+	width:32%;
+	margin:4px;
+	text-align:center;
+}
+.talent .edu_con .edu_list .edu_intr_title{
+	font-size:18px;
+	font-weight:bold;
+	color:#333333;	
+	margin-top:18px;
+	margin-bottom:30px;
+}
+.talent .edu_con .edu_list .edu_intr{
+	color:#666666;
+	width:97%;
+	height:300px;
+	margin:0 auto;
+	font-size:16px;
+	text-align:left;
+	text-indent:30px;
+	line-height:25px;
+}
+
+
+/*------------高端教育_人才定制结束了--------------*/
+
+
 /*------------开班信息--------------*/
 #subbar,#news_subbar{
 	height:40px;
@@ -280,7 +309,7 @@
 /*---------------合作伙伴结束------------------------*/
 /*-------------教育图标-------------*/
 .edu_con{
-margin-top:40px;
+margin-top:-40px;
 margin-bottom:40px;
 }
 .edu_con ul{
