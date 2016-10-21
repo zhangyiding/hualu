@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Common\Controller\BaseController;
 use Think\Controller;
 class CourseController extends BaseController {
-    public function index(){
+    public function courseList(){
         $area_id = $this->params['area_id'];
         $m_course = new \Home\Model\CourseModel();
         $course_list = $m_course->getCourseList($area_id);
@@ -29,6 +29,41 @@ class CourseController extends BaseController {
         $this->assign('area_list',$area_list);
         $this->display();
     }
+
+    public function index(){
+        $this->display();
+    }
+
+    /*
+     * unity3D页面
+     */
+    public function unity(){
+        $this->display();
+    }
+
+    /*
+ * UI专题页面
+ */
+    public function ui(){
+        $this->display();
+    }
+
+
+    /*
+ * WEB专题页面
+ */
+    public function web(){
+        $this->display();
+    }
+
+
+    /*
+ * 建筑专题页面
+ */
+    public function building(){
+        $this->display();
+    }
+
 
 
 }

@@ -32,7 +32,6 @@
 				</div>
 				<div class="nav">
 					<ul>
-
 						<li><a href="/index">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
 						<li><a href="/about">关于我们</a></li>
 						<li><a href="/course">课程设置</a></li>
@@ -155,9 +154,9 @@
 				<div id="subbar">
 
 					<ul>
-                        <li><a href="/course" target="frmain" onClick="Golink(this)">全部校区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
+                        <li><a href="/course/courseList" target="frmain" onClick="Golink(this)">全部校区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
                         <volist name='area_list' id='vo' key="k">
-						<li><a href="/course?area_id={$k}"  class="sel" target="frmain" onClick="Golink(this)">{$vo}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
+						<li><a href="/course/courseList?area_id={$k}"  class="sel" target="frmain" onClick="Golink(this)">{$vo}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
 						<!--<li><a style="margin-right:10px;" href="hbxq.html" target="frmain" onClick="Golink(this)">湖北校区</a><img src="images/xia.png" alt="" /></li>-->
                         </volist>
 					</ul>
@@ -165,7 +164,7 @@
 				</div>
 			
 				<div id="content">		
-					<iframe id="frmain" name="frmain" src="/course"  scrolling="no" frameborder="0"/></iframe>
+					<iframe id="frmain" name="frmain" src="/course/courseList"  scrolling="no" frameborder="0"/></iframe>
 				</div>
 			</div>
 		</div>
