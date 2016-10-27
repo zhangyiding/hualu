@@ -58,6 +58,7 @@ class NewsController extends BaseController {
         $where['content'] = $this->params['contents'];
         $where['add_time'] = time();
         $where['img'] = $img_path;
+        $where['is_recommend'] = $this->params['is_recommend'];
         $where['type'] = $this->params['type'];
         $m_coures = new \Admin\Model\NewsModel();
         if($m_coures->doAddNews($where) !== false){
