@@ -89,14 +89,14 @@
                                             <td>{$vo.name}</td>
                                             <td>{$vo.begin_time|date="y-m-d H:i:s",###}</td>
                                             <td>{$vo.teacher}</td>
-                                            <td><php>if($vo.status == 1){
+                                            <td><php>if($vo['status'] == 1){
                                                 echo '招生中';
                                                 }else{
                                                 echo '待招生';
                                                 }</php></td>
                                             <td>{$area_list.$vo[area]}</td>
                                             <td>{$vo.introduce}</td>
-                                            <td><php>if($vo.course_tag == 1){
+                                            <td><php>if($vo['course_tag'] == 1){
                                                 echo '推荐班';
                                                 }else{
                                                 echo '近期开班';

@@ -16,6 +16,12 @@ class CouresModel extends Model{
         return $result['0'];
     }
 
+    public function getAreInfo($id){
+        $result = $this->table('hl_course_area')->where(array('id'=>$id))->select();
+        return $result['0'];
+    }
+
+
     public function getCourseAreaList(){
         $result = $this->table('hl_course_area')->where(array('del_flag'=>0))->select();
         return $result;
@@ -32,6 +38,11 @@ class CouresModel extends Model{
 
     public function doAddCoures($where){
         $result = $this->table('hl_course')->add($where);
+        return $result;
+    }
+
+    public function doAddArea($where){
+        $result = $this->table('hl_course_area')->add($where);
         return $result;
     }
 

@@ -12,6 +12,7 @@
     <link href="__PUBLIC__/admin/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="__PUBLIC__/admin/css/stylesheet.css" rel="stylesheet">
     <link href="__PUBLIC__/admin/icon/font-awesome.css" rel="stylesheet">
+      <link href="__PUBLIC__/admin/css/index.css" rel="stylesheet">
     
 
     <!-- Le fav and touch icons -->
@@ -61,7 +62,7 @@
                            <span>首页</span><span>></span>
                            <span>课程管理</span><span>></span>
                            <span>校区管理</span>
-                           <a  href="添加用户.html" class="label label-warning" style="float:right; margin:8px;">添加</a>
+                           <a  href="/admin/coures/addArea" class="label label-warning" style="float:right; margin:8px;">添加</a>
                          </div>
                         <div class="well brown">
                             
@@ -83,12 +84,12 @@
                                     <tr>
                                             <td>{$vo.id}</td>
                                             <td>{$vo.area_name}</td>
-                                            <td><php>if($vo.status == 1){
+                                            <td><php>if($vo['status'] == "1"){
                                                 echo '已开通课程';
                                                 }else{
                                                 echo '尚未开通课程';
                                                 }</php></td>
-                                            <td>{$vo.add_time}</td>
+                                            <td>{$vo.add_time|date="Y-m-d H:i:s",###}</td>
                                             <!--<td>&nbsp;</td>-->
                                         <td>
                                             <a class="btn" href="#" title="修改"><i class="icon-inbox"></i></a>

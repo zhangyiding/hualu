@@ -85,8 +85,41 @@ class CouresController extends BaseController {
         $this->assign('area_list',$data);
         $this->display();
 
-
     }
 
 
+    /*
+    * 新增校区
+    */
+    public function addArea(){
+        //当type为1时执行更新操作，为2时插入操作
+        $m_course = new \Admin\Model\CouresModel();
+        $type = $this->params['type'];
+        if($type == 1){
+            $id = $this->params['id'];
+            $data = $m_course->getAreInfo($id);
+            $this->assign('data',$data);
+        }
+
+        $this->display();
+    }
+
+
+
+    /*
+     * 新增课程动作
+     */
+    public function doAddArea(){
+        $where['area_name'] = $this->params['name'];
+        //添加时默认为开通
+        $where['status'] = 1;
+        $where['add_time'] = time();
+        $m_coures = new \Admin\Model\CouresModel();
+        if($m_coures->doAddArea($where) !== false){
+            $this->showMsg('添加成功','areaManage',1);
+
+        }else{
+            $this->showMsg('添加失败，请重试');
+        }
+    }
 }
