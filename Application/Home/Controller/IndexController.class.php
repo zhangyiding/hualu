@@ -37,4 +37,12 @@ class IndexController extends BaseController {
     }
 
 
+    public function header(){
+        $this->display();
+    }
+
+
+    public function footer(){
+        $this->display();
+    }
 }

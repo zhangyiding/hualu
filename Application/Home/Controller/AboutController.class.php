@@ -7,7 +7,7 @@ namespace Home\Controller;
 use Common\Controller\BaseController;
 use Think\Controller;
 class AboutController extends BaseController {
-    public function index(){
+    public function brand(){
         $this->display();
     }
 

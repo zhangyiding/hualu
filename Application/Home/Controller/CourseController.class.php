@@ -30,7 +30,11 @@ class CourseController extends BaseController {
         $this->display();
     }
 
-    public function index(){
+
+    /*
+     * 室内设计
+     */
+    public function interiorDesign(){
         $this->display();
     }
 
@@ -64,6 +68,13 @@ class CourseController extends BaseController {
         $this->display();
     }
 
+
+    /*
+     * 游戏模拟
+     */
+    public function gameDummy(){
+        $this->display();
+    }
 
 
 }

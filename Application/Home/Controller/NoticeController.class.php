@@ -8,7 +8,7 @@ namespace Home\Controller;
 use Common\Controller\BaseController;
 use Think\Controller;
 class NoticeController extends BaseController {
-    public function index(){
+    public function process(){
         $this->display();
     }
 

@@ -1,123 +1,164 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>首页-华录文化教育学院</title>
-		<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/student_service.css" />
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/about_us.css" />
-	</head>
-	<body>
-		<div class="head2">
-			<div class="wrap wrap6">
-				<div class="logobox">
-					<div class="left">
-						<img src="__PUBLIC__/home/images/logo.png" alt="华录文化教育LOGO" />
-					</div>
-					<div class="right">
-						<img src="__PUBLIC__/home/images/by.png" alt="宣传标语" />
-						<img src="__PUBLIC__/home/images/phone.png" alt="华录文化教育400服务电话" />
-					</div>
-				</div>
-			</div>
-            <div class="nav">
-                <ul>
-                    <li><a href="/index">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-                    <li><a href="/about">关于我们</a></li>
-                    <li><a href="/course">课程设置</a></li>
-                    <li><a href="/employment">就业体系</a></li>
-                    <li><a href="/notice">学员须知</a></li>
-                    <li><a href="/train">高端培训</a></li>
-                    <li><a href="contact_us.html">联系我们</a></li>
-                </ul>
-            </div>
-			<div class="position">
-				<div class="wrap wrap6">
-					<div class="pos_con">您当前的位置：<a href="">首页</a>> <a href="">学员须知</a>><a href="">学校地址</a></div>
-				</div>
-			</div>
-		</div>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>华录文化教育学院</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/images/reset.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/images/css.css" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+ <script type="text/javascript" src="__PUBLIC__/home/js/jquery-1.7.1.min.js"></script>     <script type="text/javascript" src="__PUBLIC__/home/js/common.js"></script> </head>
 
-		<div class="main_content">			
-			<div class="list_nav">
-				<ul>
-					<li><a href="/notice/index">报名流程<span>></span></a></li>
-					<li><a href="/notice/study">先学习后付款<span>></span></a></li>
-					<li><a href="/notice/address">学校地址<span>></span></a></li>
-					<li class="li_last"><a href="/notice/environment">校园环境<span>></span></a></li>
-				</ul>
-			</div>
-			<div class="list_con">
-				<div class="VR_intro">
-						<div class="title_sum">
-							<ul>
-								<li class="current"><a href="">通讯信息</a></li>
-								<li><a href="">地理定位</a></li>
-								<li><a href="">来校路线</a></li>
-							</ul>
-						</div>
-						<div class="clear"></div>
-						<div class="title"><h1>通讯信息</h1></div>	
-						<div class="VR_con_intro">
-							<p>华录文化教育学院热线电话：xxxxxxxxxxx</p>
-							<p>学校地址：xxxxxxxxxxxxxxxxxxxxx</p>
-							<p>邮政编码：xxxxxxxx</p>
-						</div>
-						
-						<div class="title"><h1>地理定位</h1></div>
-						<div class="imgbox"><img src="__PUBLIC__/home/images/xxdz.jpg" alt="住宿条件图片" /></div>
-						<div class="title"><h1>来校路线</h1></div>
-						<div class="VR_con_intro">
-							<p>1.机场-学校</p>
-							<p>2.火车站-学校</p>
-							<p>3.高铁-学校</p>
-							<p>4.汽车-学校</p>
-							<p>等等</p>							
-						</div>
-						<div class="stu_con">
-							<div class="imgbox">
-								<img width="165" src="__PUBLIC__/home/images/ew.png" alt="二维码图片" />
-							</div>
-							<p>扫描二维码进入位置导航</p>
-						</div>
-				</div>
-			</div>
+<body>
+
+<header id="header">
+
+</header>
+
+<div class="kongbcr"></div><!--头部结束-->
+
+
+
+<div class="five3"><!--地址-->
+	<div class="five31">
+    	<div class="kfcly1"></div>
+    	<div class="kfcly"></div>
+        <div class="fontcly">地理定位</div>
+        <div class="bjcly">
+        <div style="width:1198px;height:650px;border:#ccc solid 1px;" id="dituContent"></div>
+
+		<div><script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.292391,39.926176);//定义一个中心点坐标
+        map.centerAndZoom(point,12);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_TOP_LEFT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"北京华录学院总校区",content:"北京市石景山区阜石路165号院华录大厦12层<br/>电话：010-52281613",point:"116.199398|39.932705",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
 			
-		</div>
-		<div class="edu_con">
-			<div class="wrap">
-				<ul>
-					<li><img src="__PUBLIC__/home/images/3D1.png" alt="合作伙伴1" /><span>Unity3D开发</span></li>
-					<li><img src="__PUBLIC__/home/images/UI1.png" alt="合作伙伴1" /><span>UI设计</span></li>
-					<li><img src="__PUBLIC__/home/images/snsj1.png" alt="合作伙伴1" /><span>室内设计</span></li>
-					<li><img src="__PUBLIC__/home/images/webqd1.png" alt="合作伙伴1" /><span>web前端设计</span></li>
-					<li><img src="__PUBLIC__/home/images/jzzs1.png" alt="合作伙伴1" /><span>建筑展示</span></li>
-					<li><img src="__PUBLIC__/home/images/yxmx1.png" alt="合作伙伴1" /><span>游戏模型</span></li>
-					<li><img src="__PUBLIC__/home/images/zx1.png" alt="合作伙伴1" /><span>在线咨询</span></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer">
-			<div class="wrap wrap5">
-				<ul>
-					<li><a href="">关于我们</a><span>品牌介绍</span><span>VR教育</span><span>发展优势</span></li>
-					<li><a href="">就业体系</a><span>就业体系</span><span>人才输出</span><span>就业服务</span></li>
-					<li><a href="">学员服务</a><span>报名流程</span><span>先学习后付款</span><span>学院地址</span><span>校园环境</span></li>
-					<li><a href="">高端教育</a><span>院校合作</span><span>企业定制</span><span>文化扶贫</span><span>教育信息化</span></li>
-					<li><a href="">联系我们</a><span>课程咨询</span><span>合作洽谈</span><span>文化扶贫</span><span>教育信息化</span></li>
-				</ul>
-				<div class="camp_info">
-					<p>公司地址：北京市石景山区阜石路165号院中国华录大厦14层</p>
-					<p>邮编 P.C：100043 传真 FAX：（010）52281678 东东007客服电话：400-0097-007</p>
-					<p>蓝光业务咨询：86-13810308927</p>
-					<p>京ICP备10205992号-3</p>
-				</div>
-				<div class="ew_img_box">
-					<img src="__PUBLIC__/home/images/ew.png" alt="公司二维码图片" />
-					<img style="margin-top:80px;" src="__PUBLIC__/home/images/jt.png" alt="向上的箭头" />
-				</div>
-			</div>
-		</div>
-	</body>
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/__PUBLIC__/home/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+</div> <!--地图结束--> 
+
+          <div class="zicly">通讯信息：</div>
+            <div class="zicly1">华录文化教育学院热线电话：010-52281613 <br />华录文化教育报名联系人：李健 13354282857 <br />学校地址：北京市石景山区阜石路165号院华录大厦12层 <br />邮政编码：100043</div>
+            
+        </div>
+        <div class="kfcly21"></div>
+        <div class="kfcly2"></div>
+        <div class="fontcly1">来校路线：</div>
+        <div class="gjcly"></div>
+        <div class="fontcly2">公交路线：</div>
+        <div class="fontcly21">北京站：-地铁2号线内环（积水潭方向）- 北京站㆖→  复兴门㆘→  站内换乘→  - 地铁1号线（苹果园方向）-复兴门㆖→  苹果园㆘→  东南方向步行1000米。
+    
+    <br /><br />北京西站：-地铁9号线（国家图书馆方向）> 北京西站㆖→  军事博物馆㆘→  站内换乘→  -地铁1号线（苹果园方向）>军事博物馆㆖→  苹果园㆘→  东南方向步行1000米。
+    
+    <br /><br />北京南站：-地铁4号线大兴线（安河桥北方向）> 北京南站㆖→  西单㆘→  站内换乘→  -地铁1号线（苹果园方向）>西单㆖→  苹果园㆘→  东南方向步行1000米。
+    
+    <br /><br />北京北站：-地铁2号线外环（西直门方向）> 西直门㆖→  复兴门㆘→  站内换乘→  -地铁1号线（苹果园方向）>复兴门㆖→  苹果园㆘→  东南方向步行1000米。
+    
+    <br /><br />北京首都国际机场：-机场大巴石景山线（石景山方向）> 首都机场1号航站楼㆖→ 石景山㆘步行100米。
+    
+    <br /><br />北京南苑国际机场：-机场大巴公主坟线（公主坟方向）> 南苑机场㆖→  公主坟㆘→  步行200米 →  -地铁1号线（苹果园方向）> 公主坟㆖→  苹果园㆘→  <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;东南方向步行1000米。</div>
+        <div class="taxicly"></div>
+        <div class="zjcly"></div>
+        <div class="fontcly3">乘坐出租车/开车路线：</div>
+        <div class="fontcly31">导航（百度、高德、谷歌均可）搜索“华录文化教育学院”<br /><br />地址位于北京石景山区杨庄东街与阜石路交汇处（当代商城附近）</div><!--导航是不是有链接-->
+ </div>
+
+
+
+</div>
+
+
+    <footer id="footer">
+
+    </footer>
+    
+</body>
 </html>
