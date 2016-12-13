@@ -50,26 +50,3 @@
 	font-size:30px;
 	color:#816400;
 }
-.VR_intro .title_sum ul {
-    height: 60px;
-}
-.list_con .VR_intro .imgbox{
-	width:100%;
-	margin-bottom:30px;
-}
-.list_con .VR_intro .imgbox img{
-	width:1050px;
-}
-.list_con .VR_intro .stu_con{
-	width:165px;
-}
-
-.stu_con .VR_intro .stu_con .imgbox{
-	width:165px;
-}
-.stu_con_intro{
-	margin-bottom:50px;
-}
-.stu_con_intro span{
-	color:#083090;
-}

@@ -277,6 +277,7 @@ margin-bottom:40px;
 	margin-top:20px;
 	width:1050px;
 	float:right;
+	height:1000px;
 }
 .list_con .imgbox{
 	position:relative;
@@ -363,7 +364,7 @@ margin-bottom:40px;
 
 .list_con_intro .intro_con{
 	background:url("../images/con_intro_icon.jpg") no-repeat scroll;
-	height:45px;
+	height:35px;
 	margin-bottom:20px;
 }
 .list_con_intro .intro_con p{

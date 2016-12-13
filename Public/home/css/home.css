@@ -1,60 +1,64 @@
 @charset "utf-8";
 /* 首页 布局-liujx*/
 /*-----------页头---------------*/
+.slides{
+height:700px;
+}
+
 .head{
 	width:100%;
 	margin:0 auto;
-	height:815px;
+	height:470px;
+	position:relative;
 }
 
 .head .logobox{
 	height:100%;
 }
-.head .nav{
-	width:100%;
-	height:80px;
-	z-index:1000;
+.nav .box {
+    left: 505px;
+    position: absolute;
+    top: 126px;
+    width: 1200px;
+    z-index: 5000;
 }
-.head  .nav ul{
-	width:99%;
-	background:#083090;
-	margin-top:100px;
-	text-align:center;
-	z-index:1000;
-	height:80px;
-	padding-left:150px;
-	padding-top:10px;
+.nav.box1 {
+    left: 680px;
 }
-.head ul li{
-	background:url(../images/nav_bg.png) no-repeat scroll;
-	background-position:100% 40%;
-	width:11%;
-	font-weight:bold;
-	font-size:20px;
-	text-align:center;	
-	color:#fff;
-	height:65px;
-	line-height:50px;
-	float:left;
-	margin:0 2px;
-	text-align:center;	
+.box span {
+    display: block;
+    float: left;
+    width: 300px;
 }
-.head ul li a{
-	font-size:20px;
-	font-weight:bold;
-	color:#fff;
-	height:65px;
-	line-height:50px;
-	padding-bottom:26px;
+.area {
+    background: #9191b7 url("images/list_bg1.jpg") repeat-x scroll 0 0;
+    float: left;
+    height: auto;
+    margin-top: 10px;
+    width: 170px;
 }
-.head ul li a:hover{
-	text-decoration:none;
-	color:#d5b047;
-	line-height:50px;
-	border-bottom: 5px #d5b047 solid;
+.box span ul {
+    float: left;
+}
+.box span ul li {
+    background: #004e99 none repeat scroll 0 0;
+    border-bottom: 1px solid #9191b7;
+    line-height: 29px;
+    text-align: center;
+    width: 170px;
+}
+.box span ul li:hover {
+    background: #9191b7 none repeat scroll 0 0;
+    color: #004e99;
+}
+.box span ul li a {
+    color: #fff;
+    font-size: 12px;
+    height: 29px;
+    width: 170px;
+}
 
-}
-.head .slider{
+.head .slider_banner{
 	margin-top:-40px;
 	width:100%;
 	height:300px;
@@ -66,6 +70,12 @@
 	margin-top:40px;
 	margin-bottom:40px;
 	text-align:center;
+}
+.advertise1{
+	background:url("../images/adv.jpg") no-repeat center center;
+	height:100px;
+	margin-top:280px;
+	font-size:1300px 100px;
 }
 .wrap2{
 	position:relative;
@@ -88,6 +98,7 @@
 .title{
 	height:70px;
 	background:url(../images/bar_bg.png) no-repeat scroll;
+	background-size:1300px;
 	background-position:100% 50%;
 	margin-top:50px;
 	width:100%;
@@ -120,7 +131,7 @@
 }
 .course .cour_con .cour_list .cour_intr{
 	color:#666666;
-	width:75%;
+	width:85%;
 	height:140px;
 	margin:0 auto;
 	font-size:14px;
@@ -162,33 +173,170 @@
 	text-decoration:none;
 	color:#af8b0f;
 }
-/*------------高端教育_人才定制开始了--------------*/
 
-.talent .edu_con .edu_list{
-	width:32%;
-	margin:4px;
-	text-align:center;
-}
-.talent .edu_con .edu_list .edu_intr_title{
-	font-size:18px;
-	font-weight:bold;
-	color:#333333;	
-	margin-top:18px;
-	margin-bottom:30px;
-}
-.talent .edu_con .edu_list .edu_intr{
-	color:#666666;
-	width:97%;
-	height:300px;
-	margin:0 auto;
-	font-size:16px;
-	text-align:left;
-	text-indent:30px;
-	line-height:25px;
+/*----------首页导航-------------*/
+#navlist{
+    background:#083090; width:1600px; margin:0 auto;height:80px; margin-top:110px;
 }
 
+#navfocus {
+    font-weight:bold; font-family:Microsoft YaHei; line-height: 80px; height:80px; verticla-align:middle; list-style-type: none; width:70%; margin:0 auto;
+}
 
-/*------------高端教育_人才定制结束了--------------*/
+#navfocus a {
+    display: block; width: 100%; text-align:center;line-height:20px;padding-bottom:30px;margin-top:25px;
+    font-size:20px;
+}
+
+#navfocus a:link  {
+    color:#fff; text-decoration:none;
+}
+#navfocus a:visited  {
+    color:#fff;text-decoration:none;
+}
+#navfocus a:hover  {
+    color:#FFF;text-decoration:bottom;font-weight:bold;
+}
+
+#navfocus li {
+    float: left; width:10%;margin-right:3%; margin-left:3%;
+}
+#navfocus li a{
+    text-decoration:none; border-bottom:5px solid #083090;
+}
+
+#navfocus li a:hover{
+    text-decoration:none; border-bottom:5px solid #d5b047;
+}
+#navfocus li ul {
+    line-height: 27px;  list-style-type: none;text-align:left; vertical-align:bottom; font-size:10px; color:#fff;
+    left: -700em; width: 1300px; height:188px; margin:0 auto; position: absolute;margin-left:-514px; visibility:visible;background:url(images/sful_bg.png) repeat-x;
+}
+#navfocus li ul li{
+    float: left; width: 123px;
+    height:188px;
+    padding-top:150px;
+    text-align:center;
+}
+#li_1{
+    width:130px;
+    background: url(/Public/home/images/nav_3D_icon.png) no-repeat scroll;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+
+#li_2{
+    background: url(/Public/home/images/nav_UI_icon.png) no-repeat scroll;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#li_3{
+    background: url(/Public/home/images/nav_sn_icon.png) no-repeat scroll;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#li_4{
+    background: url(/Public/home/images/nav_web_icon.png) no-repeat scroll;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#li_5{
+    background: url(/Public/home/images/nav_yx_icon.png) no-repeat scroll;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#li_6{
+    background: url(/Public/home/images/nav_jz_icon.png) no-repeat scroll;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+
+#navfocus li ul a{
+    color:#fff; display:block; width:140px;height:auto; margin:0 auto;text-align:center; padding-left:15px;font-size:12px; border-bottom:none;
+}
+
+#navfocus li ul a:link  {
+    color:#fff; text-decoration:none;
+}
+#navfocus li ul a:visited  {
+    color:#fff;text-decoration:none;
+}
+#navfocus li ul a:hover  {
+    color:#F3F3F3;text-decoration:none;font-weight:normal;
+    border-bottom:none;
+    padding-bottom:0px;
+
+}
+#navfocus li ul li{
+    height:188px;
+    padding-top:0px;
+}
+#navfocus li ul li a{
+    padding-top:150px;
+    font-family:Microsoft Yahei;
+    font-size:12px;
+}
+#navfocus li ul li a:hover{
+    color:#ffce24;
+    font-family:Microsoft Yahei;
+    font-size:12px;
+}
+
+#navfocus li ul li:hover{
+}
+#navfocus li ul #li_1:hover{
+    background:url(/Public/home/images/nav_3D_hover_icon.png) no-repeat;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#navfocus li ul #li_2:hover{
+    background:url(/Public/home/images/nav_UI_hover_icon.png) no-repeat;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#navfocus li ul #li_3:hover{
+    background:url(/Public/home/images/nav_sn_hover_icon.png) no-repeat;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#navfocus li ul #li_4:hover{
+    background:url(/Public/home/images/nav_web_hover_icon.png) no-repeat;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#navfocus li ul #li_5:hover{
+    background:url(/Public/home/images/nav_yx_hover_icon.png) no-repeat;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+#navfocus li ul #li_6:hover{
+    background:url(/Public/home/images/nav_jz_hover_icon.png) no-repeat;
+    background-position:100%,20%;
+    background-size:80px;80px;
+}
+
+
+#navfocus li:hover ul {
+    left: auto;
+}
+#navfocus li.sfhover ul {
+    color:#fff;
+    width:1300px;
+    height:188px;
+    left: auto;
+    background:url(/Public/home/images/sful_bg.png);
+    visibility:visible;
+}
+#navfocus li.sfhover ul li:hover{
+    width:123px;
+    height:188px;
+    text-align:center;
+}
+#content {
+    clear: left;
+}
+
+
 
 
 /*------------开班信息--------------*/
@@ -289,7 +437,7 @@
 
 /*---------------合作伙伴开始------------------------*/
 .coactioner{
-	
+	margin-bottom:100px;
 }
 .coactioner ul{
 	width:100%;
@@ -309,7 +457,7 @@
 /*---------------合作伙伴结束------------------------*/
 /*-------------教育图标-------------*/
 .edu_con{
-margin-top:-40px;
+margin-top:40px;
 margin-bottom:40px;
 }
 .edu_con ul{
@@ -386,3 +534,4 @@ margin-bottom:40px;
 	top:0px;
 	text-align:right;
 }
+

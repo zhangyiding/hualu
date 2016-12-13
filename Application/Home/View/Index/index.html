@@ -14,11 +14,45 @@
 	<script type="text/javascript" src="__PUBLIC__/home/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/home/js/slider.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/home/js/jquery.yx_rotaion.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type="text/css">
 
+            /**{margin:0;padding:0;border:0;}*/
+            /*body {*/
+                /*font-family: arial, 宋体, serif;*/
+                /*font-size:12px;*/
+            /*}*/
+
+
+            -->
+        </style>
+
+        <script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            function menuFix() {
+                var sfEls = document.getElementById("navfocus").getElementsByTagName("li");
+                for (var i=0; i<sfEls.length; i++) {
+                    sfEls[i].onmouseover=function() {
+                        this.className+=(this.className.length>0? " ": "") + "sfhover";
+                    }
+                    sfEls[i].onMouseDown=function() {
+                        this.className+=(this.className.length>0? " ": "") + "sfhover";
+                    }
+                    sfEls[i].onMouseUp=function() {
+                        this.className+=(this.className.length>0? " ": "") + "sfhover";
+                    }
+                    sfEls[i].onmouseout=function() {
+                        this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+
+                                "");
+                    }
+                }
+            }
+            window.onload=menuFix;
+
+            //--><!]]>
+        </script>
 	</head>
-	<body>
+	<div>
 		<div class="head">
 			<div class="wrap">
 				<div class="logobox">
@@ -30,57 +64,85 @@
 						<img src="__PUBLIC__/home/images/phone.png" alt="华录文化教育400服务电话" />
 					</div>
 				</div>
-				<div class="nav">
-					<ul>
+				<div id="navlist">
+                    <ul id="navfocus">
 						<li><a href="/index">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
 						<li><a href="/about">关于我们</a></li>
-						<li><a href="/course">课程设置</a></li>
+						<li><a href="">课程设置</a>
+                            <ul>
+                                <li id="li_1"><a href="/course/unity">VR(Unity3D开发方向)</a></li>
+                                <li id="li_2"><a href="/course/ui">VR(UI设计方向)</a></li>
+                                <li id="li_3"><a href="">VR(室内设计方向)</a></li>
+                                <li id="li_4"><a href="/course/web">VR(web前端方向)</a></li>
+                                <li id="li_5"><a href="">VR(游戏模型方向)</a></li>
+                                <li id="li_6"><a href="/course/building">VR(建筑展示方向)</a></li>
+                            </ul></li>
 						<li><a href="/employment">就业体系</a></li>
 						<li><a href="/notice">学员须知</a></li>
 						<li><a href="/train">高端培训</a></li>
-						<li><a href="contact_us.html">联系我们</a></li>
 					</ul>
 				</div>
 			</div>
 
-            <div id="myCarousel" class="carousel slide">
-                <!-- 轮播（Carousel）指标 -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <!-- 轮播（Carousel）项目 -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="__PUBLIC__/home/images/banner1.jpg" alt="First slide">
-                    </div>
-                    <div class="item">
-                        <img src="__PUBLIC__/home/images/banner2.jpg" alt="Second slide">
-                    </div>
-                    <div class="item">
-                        <img src="__PUBLIC__/home/images/banner3.jpg" alt="Third slide">
-                    </div>
-                </div>
-                <!-- 轮播（Carousel）导航 -->
-                <a class="carousel-control left" href="#myCarousel"
-                   data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#myCarousel"
-                   data-slide="next">&rsaquo;</a>
-            </div>
 
-            <!--<div class="slider">-->
-				<!--<img src="__PUBLIC__/home/images/banner2.jpg" alt="广告轮播图" />-->
-			<!--</div>-->
+            <div class="slider_banner">
+                <div id="banner_tabs" class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <a title="" target="_blank" href="#">
+                                <img alt="" style="background: url(/Public/home/images/banner1.jpg) no-repeat center;" src="/Public/home/images/alpha.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" target="_blank" href="#">
+                                <img alt="" style="background: url(/Public/home/images/banner2.jpg) no-repeat center;" src="/Public/home/images/alpha.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" target="_blank" href="#">
+                                <img  alt="" style="background: url(/Public/home/images/banner3.jpg) no-repeat center;" src="/Public/home/images/alpha.png">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="flex-direction-nav">
+                        <li><a class="flex-prev" href="javascript:;">Previous</a></li>
+                        <li><a class="flex-next" href="javascript:;">Next</a></li>
+                    </ul>
+                    <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+                        <li><a>1</a></li>
+                        <li><a>2</a></li>
+                        <li><a>2</a></li>
+                    </ol>
+                </div>
+                <script type="text/javascript">
+                    $(function() {
+                        var bannerSlider = new Slider($('#banner_tabs'), {
+                            time: 5000,
+                            delay: 400,
+                            event: 'hover',
+                            auto: true,
+                            mode: 'fade',
+                            controller: $('#bannerCtrl'),
+                            activeControllerCls: 'active'
+                        });
+                        $('#banner_tabs .flex-prev').click(function() {
+                            bannerSlider.prev()
+                        });
+                        $('#banner_tabs .flex-next').click(function() {
+                            bannerSlider.next()
+                        });
+                    })
+                </script>
+            </div>
 			<div class="clear"></div>
 		</div>
-		
-		<div class="advertise">
-			<img src="__PUBLIC__/home/images/adv.png" alt="文化央企进军VR教育 上市公司引领培训新时代" />
+
+		<div class="advertise advertise1">
+			<img width="1300" src="__PUBLIC__/home/images/adv.png" alt="文化央企进军VR教育 上市公司引领培训新时代" />
 		</div>
 		<div class="train">
 			<div class="wrap wrap2">
-				<img src="__PUBLIC__/home/images/edu.png" alt="华录教育、虚拟现实" />
+				<img width="1300" src="__PUBLIC__/home/images/edu.png" alt="华录教育、虚拟现实" />
 				<div class="consult_button"><img src="__PUBLIC__/home/images/refer.png" alt="在线咨询" /></div>
 			</div>
 		</div>
@@ -162,7 +224,7 @@
 
 				</div>
 			
-				<div id="content">		
+				<div id="content">
 					<iframe id="frmain" name="frmain" src="/course/courseList"  scrolling="no" frameborder="0"/></iframe>
 				</div>
 			</div>
