@@ -7,7 +7,10 @@ class NewsModel extends Model{
     protected $tableName = 'hl_news';
 	
 	public function getNewsList(){
-	    $result = $this->table('hl_news')->where(array('del_flag'=>0))->select();
+	    $result = $this->table('hl_news')
+            ->where(array('del_flag'=>0))
+            ->order('add_time desc ')
+            ->select();
 	    return $result;
 	}
 

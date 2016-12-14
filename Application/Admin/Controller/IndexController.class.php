@@ -11,7 +11,7 @@ class IndexController extends BaseController {
             $this->assign('username',$username);
             $this->display();
         }else{
-            $this->showMsg('尚未登录','login/index',1);
+            $this->showMsg('尚未登录','admin/login/index',1);
         }
 
 

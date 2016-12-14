@@ -16,7 +16,7 @@ class NewsController extends BaseController {
 
         $data = $m_news->getNewsList();
         foreach($data as $k=>$v){
-            $data[$k]['img'] = empty($v['img'])? C('IMG_URL').'/'.'news/no_img.jpg': C('IMG_URL') . '/'.$v['img'];
+            $data[$k]['img'] = getImageBaseUrl($v['img']);
         }
         $this->assign('news_list',$data);
         $this->assign('news_type',$news_type);
