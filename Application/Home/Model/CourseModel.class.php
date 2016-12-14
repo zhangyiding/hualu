@@ -5,9 +5,9 @@ class CourseModel extends Model{
 	protected $connection = 'DB_ETAGO';
     protected $tableName = 'hl_course';
 	
-	public function getCourseList($area_id){
+	public function getCourseList(){
         //当区域id为空时查询全部区域的数据
-       $where = (empty($area_id))? array('del_flag'=>0) : array('del_flag'=>0,'area'=>1);
+       $where = array('del_flag'=>0);
 	    $result = $this->where($where)->select();
 	    return $result;
 	}
@@ -20,5 +20,20 @@ class CourseModel extends Model{
         return $area_arr;
     }
 
+
+    public function doSignUp($data){
+        $result = $this->table('hl_sign_up')
+            ->add($data);
+
+        return $result;
+    }
+
+
+    public function checkMobile($mobile){
+        $result = $this->table('hl_sign_up')
+            ->where(array('mobile'=>$mobile,'del_flag'=>0))
+            ->select();
+        return $result;
+    }
 }
 ?>

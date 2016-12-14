@@ -2,7 +2,7 @@
 namespace Admin\Model;
 use Think\Model;
 use Common\Lib\Curl;
-class CouresModel extends Model{
+class CourseModel extends Model{
 	protected $connection = 'DB_ETAGO';
     protected $tableName = 'hl_course';
 	
@@ -12,8 +12,8 @@ class CouresModel extends Model{
 	}
 
     public function getCourseInfo($id){
-        $result = $this->table('hl_course')->where(array('id'=>$id))->select();
-        return $result['0'];
+        $result = $this->table('hl_course')->where(array('id'=>$id))->find();
+        return $result;
     }
 
     public function getAreInfo($id){
@@ -54,6 +54,13 @@ class CouresModel extends Model{
     }
 
 
+
+    public function getSignList(){
+        $result = $this->table('hl_sign_up')
+            ->where(array('del_flag'=>0))
+            ->select();
+        return $result;
+    }
 
 }
 ?>

@@ -59,9 +59,9 @@
                          <div  class="daohanglink"style="">
                            <span class="daohang"></span>
                            <span>首页</span><span>></span>
-                           <span>课程管理</span><span>></span>
-                           <span>课程管理</span>
-                           <a  href="/admin/coures/addCourse" class="label label-warning" style="float:right; margin:8px;">添加</a>
+                           <span>报名信息管理</span><span>></span>
+                           <!--<span>课程管理</span>-->
+                           <!--<a  href="/admin/news/addNews" class="label label-warning"  style="float:right; margin:8px;">添加</a>-->
                          </div>
                         <div class="well brown">
                             
@@ -72,39 +72,39 @@
                                         <tr>
                                             <!--<th width="5%">排序</th>-->
                                             <th width="5%">ID</th>
-                                            <th width="8%">学科名称</th>
-                                            <th width="142">开始时间</th>
-                                            <th width="22%">授课老师</th>
-                                            <th width="8%">状态</th>
-                                            <th width="5%">所属校区</th>
-                                            <th width="10%">课程介绍</th>
-                                            <th width="15%">课程类型</th>
+                                            <th width="8%">姓名</th>
+                                            <th width="8%">手机号码</th>
+                                            <th width="8%">QQ号码</th>
+                                            <th width="5%">学历</th>
+                                            <th width="3%">性别</th>
+                                            <th width="8%">Email</th>
+                                            <th width="10%">备注</th>
+                                            <th width="6%">是否咨询过顾问老师</th>
+                                            <th width="25%">目前情况</th>
+                                            <th width="6%">学习课程</th>
+                                            <th width="8%">学习时间</th>
                                         </tr>
 
                                     </thead>
                                     <tbody>
-                                    <foreach name="cue_list" item="vo">
+                                    <foreach name="data" item="vo">
                                     <tr>
                                             <td>{$vo.id}</td>
                                             <td>{$vo.name}</td>
-                                            <td>{$vo.begin_time|date="y-m-d H:i:s",###}</td>
-                                            <td>{$vo.teacher}</td>
-                                            <td><php>if($vo['status'] == 1){
-                                                echo '招生中';
-                                                }else{
-                                                echo '待招生';
-                                                }</php></td>
-                                            <td>{$area_list.$vo[area]}</td>
-                                            <td>{$vo.introduce}</td>
-                                            <td><php>if($vo['course_tag'] == 1){
-                                                echo '推荐班';
-                                                }else{
-                                                echo '近期开班';
-                                                }</php></td>
+                                            <td>{$vo.mobile}</td>
+                                            <td>{$vo.qq}</td>
+                                            <td>{$vo.education}</td>
+                                            <td>{$vo.gender}</td>
+                                            <td>{$vo.email}</td>
+                                        <td>{$vo.remark}</td>
+                                        <td>{$vo.is_ask}</td>
+                                        <td>{$vo.user_status}</td>
+                                        <td>{$vo.cse_name}</td>
+                                        <td>{$vo.learn_time}</td>
                                             <!--<td>&nbsp;</td>-->
                                         <td>
-                                            <a class="btn" href="/admin/coures/addCourse?type=1&id=<?php echo $vo['id'];?>" title="修改"><i class="icon-inbox"></i></a>
-                                            <a class="btn" href="/admin/coures/delCourse?id=<?php echo $vo['id'];?>" methods="post" title="删除"><i class="icon-trash"></i></a>
+                                            <a class="btn" href="/admin/notice/addInfo?type=1&id=<?php echo $vo['id'];?>" title="修改"><i class="icon-inbox"></i></a>
+                                            <a class="btn" href="/admin/notice/delInfo?id=<?php echo $vo['id'];?>" title="删除"><i class="icon-trash"></i></a>
                                             <!--<a class="btn" href="#" title="查看"><i class="icon-exclamation"></i></a>-->
                                         </td>
                                         </foreach>
