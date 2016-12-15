@@ -111,7 +111,7 @@
                     });
                     $('> div > div', slidercontents).css('display', '');
                     $('.outer', slidercontents).each(function(index) {
-                        $(this).prepend($('<img/>').attr('src', 'images/zoom.png').addClass('zoom')
+                        $(this).prepend($('<img/>').attr('src', '../images/zoom.png').addClass('zoom')
                         .css({
                             cursor: 'pointer',
                             'position': 'absolute',
