@@ -31,13 +31,13 @@ class Upimg {
 
     public function __construct($files)
     {
-        define("IMG_DIR" , 'public/admin/image');
+        define("IMG_DIR" , 'Public/admin/image');
         define("FILE_DIR" , ".");
         define("ORIG_IMG" , "img");
         define("COMM_THUMB_SIZE" , "120");
         define("BIG_THUMB_SIZE" , "500");
-        if(!defined('IMG_URL'))
-            define("IMG_URL" , "http://img.hualu.com");
+//        if(!defined('IMG_URL'))
+//            define("IMG_URL" , "http://img.hualu.com");
         $this->files = $files;
     }
 

@@ -1067,10 +1067,10 @@ function handleImageSize($image,$type=1,$need_size=''){
  */
 function getImageBaseUrl($img){
 	if(empty($img)){
-        $img_url = C('IMG_URL') . '/' . 'public/admin/no_img.jpg';
+        $img_url = C('IMG_URL') . '/' . 'Public/no_img.jpg';
 
     }else{
-        $img_url = C('IMG_URL') . '/' .'public/admin/image/'. $img;
+        $img_url = C('IMG_URL') . '/' .'Public/admin/image/'. $img;
     }
     return $img_url;
 }
