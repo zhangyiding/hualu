@@ -1350,7 +1350,7 @@ ul.main > li > ul.sub_main > li > a > span.label {
 -------------------------------------------------- */
 
 #content {
-  margin-left: 219px;
+  margin-left: 0px;
   position: relative;
   z-index: 97;
 }

@@ -46,35 +46,12 @@
                            
                          </div>
                         <div class="well brown">
-                         <form action="/admin/coures/doAddCourse" method="get">
+                         <form action="/admin/course/doAddCourse" method="get">
                              <!--<div> <input id="id" name="id"  type="text" value={$data.id}></div>-->
                             <div class="form_list"><label class="lable_title">课程名称</label><input id="name" name="name" class="form_input" type="text" value={$data.name}></div>
                             <div class="form_list"><label class="lable_title">开始时间</label><input  name="begin_time" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="form_input" type="text" value={$data.begin_time}></div>
-                            <div class="form_list"><label class="lable_title">教学老师</label><input id="teacher" name="teacher" class="form_input" type="text" value={$data.teacher}></div>
-                                <div class="form_list"><label class="lable_title">所属校区</label>
-                            <select id="area" name="area" style="width:150px; margin-left:15px;">
-                              <option value="">请选择校区</option>
-                                <volist name='area_list' id='vo' key="k">
-                                    <option value="<?php print($k); ?>" >{$vo}</option>
-                                </volist>
-                            </select>
-                                    </div>
-                             <div class="form_list"><label class="lable_title">课程类型</label>
-                                 <select id="type" name="type" style="width:150px; margin-left:15px;">
-                                     <option value="">请选择类型</option>
-                                     <volist name='course_type' id='vo' key="k">
-                                         <option value="<?php print($k); ?>">{$vo}</option>
-                                     </volist>
-                                 </select>
-                             </div>
-                             <div class="form_list"><label class="lable_title">课程类型</label>
-                                 <select id="status" name="status" style="width:150px; margin-left:15px;">
-                                     <option value="">请选择状态</option>
-                                     <volist name='status_list' id='vo' key="k">
-                                         <option value="<?php print($k); ?>">{$vo}</option>
-                                     </volist>
-                                 </select>
-                             </div>
+                             <input id="course_id" type="hidden" name="id" value="{$data.id}" />
+                             <input id="op_type" type="hidden" name="op_type" value="{$op_type}" />
 
                             <!--<div class="form_list"><label class="lable_title">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label><input class="form_input" type="text"/></div>-->
                             <!--<div class="form_list"><label class="lable_title">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex">&nbsp;&nbsp;男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex">&nbsp;&nbsp;女</div>-->

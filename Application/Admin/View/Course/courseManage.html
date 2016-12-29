@@ -7,45 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="../../Public/admin/css/bootstrap.css" rel="stylesheet">
-    <link href="../../Public/admin/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../../Public/admin/css/stylesheet.css" rel="stylesheet">
-    <link href="../../Public/admin/icon/font-awesome.css" rel="stylesheet">
-    
+      <link href="../../Public/admin/css/bootstrap.css" rel="stylesheet">
+      <link href="../../Public/admin/css/bootstrap-responsive.css" rel="stylesheet">
+      <link href="../../Public/admin/css/stylesheet.css" rel="stylesheet">
+      <link href="../../Public/admin/css/style.css" rel="stylesheet">
+      <link href="../../Public/admin/icon/font-awesome.css" rel="stylesheet">
 
-    <!-- Le fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../Public/admin/img/apple-touch-icon-144-precomposed.html">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../Public/admin/img/apple-touch-icon-114-precomposed.html">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../Public/admin/img/apple-touch-icon-72-precomposed.html">
-                    <link rel="apple-touch-icon-precomposed" href="../../Public/admin/img/apple-touch-icon-57-precomposed.html">
-                                  
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
+      <script src="../../Public/admin/js/jquery-1.10.2.js"></script>
       <script src="../../Public/admin/js/html5shiv.js"></script>
-    <![endif]-->
-    <style type="text/css">
-    .input{ width:40px;
-	text-align:center;}
-	.daohanglink{
-		height:40px; line-height:40px; vertical-align:middle; width:100%;
-		background-color:rgb(248,248,248);
-		margin-bottom:15px;
-		}
-	.daohanglink span{
-		margin-left:5px;}
-	.daohang{
-	float: left;
-	height: 15px;
-	width: 5px;
-	border-left-width: 5px;
-	border-left-style: solid;
-	border-left-color: #036;
-	margin-top:12px;
-	margin-left:15px;
-		}
-    </style>
+      <script src="../../Public/admin/js/common.js"></script>
   </head>
 
   <body>
@@ -61,7 +31,7 @@
                            <span>首页</span><span>></span>
                            <span>课程管理</span><span>></span>
                            <span>课程管理</span>
-                           <a  href="/admin/coures/addCourse" class="label label-warning" style="float:right; margin:8px;">添加</a>
+                           <a  href="/admin/course/addCourse" class="label label-warning" style="float:right; margin:8px;">添加</a>
                          </div>
                         <div class="well brown">
                             
@@ -73,12 +43,9 @@
                                             <!--<th width="5%">排序</th>-->
                                             <th width="5%">ID</th>
                                             <th width="8%">学科名称</th>
-                                            <th width="142">开始时间</th>
-                                            <th width="22%">授课老师</th>
-                                            <th width="8%">状态</th>
-                                            <th width="5%">所属校区</th>
-                                            <th width="10%">课程介绍</th>
-                                            <th width="15%">课程类型</th>
+                                            <th width="15%">开始时间</th>
+                                            <th width="13%">课程状态</th>
+
                                         </tr>
 
                                     </thead>
@@ -88,23 +55,22 @@
                                             <td>{$vo.id}</td>
                                             <td>{$vo.name}</td>
                                             <td>{$vo.begin_time|date="y-m-d H:i:s",###}</td>
-                                            <td>{$vo.teacher}</td>
-                                            <td><php>if($vo['status'] == 1){
-                                                echo '招生中';
-                                                }else{
-                                                echo '待招生';
-                                                }</php></td>
-                                            <td>{$area_list.$vo[area]}</td>
-                                            <td>{$vo.introduce}</td>
-                                            <td><php>if($vo['course_tag'] == 1){
-                                                echo '推荐班';
-                                                }else{
-                                                echo '近期开班';
-                                                }</php></td>
-                                            <!--<td>&nbsp;</td>-->
                                         <td>
-                                            <a class="btn" href="/admin/course/addCourse?type=1&id=<?php echo $vo['id'];?>" title="修改"><i class="icon-inbox"></i></a>
-                                            <a class="btn" href="/admin/course/delCourse?id=<?php echo $vo['id'];?>" methods="post" title="删除"><i class="icon-trash"></i></a>
+                                            <if condition="($vo.del_flag eq 0)">
+                                                正常
+                                                <else />
+                                                已禁用
+
+                                            </if>
+                                        </td>
+                                        <td>
+                                            <a class="btn" href="/admin/course/addCourse?type=1&id={$vo.id}" title="修改"><i class="icon-inbox"></i></a>
+                                            <if condition="($vo.del_flag eq 0)">
+                                                <a class="btn" href="/admin/course/delCourse?id={$vo.id}&op_type=1" title="禁用"><i>禁用</i></a>
+                                                <else />
+                                                <a class="btn" href="/admin/course/delCourse?id={$vo.id}&op_type=2" title="启用"><i>启用</i></a>
+                                            </if>
+
                                             <!--<a class="btn" href="#" title="查看"><i class="icon-exclamation"></i></a>-->
                                         </td>
                                         </foreach>

@@ -14,12 +14,20 @@ class NewsController extends BaseController {
             '3'=>'学院新闻',
         );
 
-        $data = $m_news->getNewsList();
-        foreach($data as $k=>$v){
-            $data[$k]['img'] = getImageBaseUrl($v['img']);
+        $where = array();
+        if($this->params['news_type']){
+            $where['type'] = $this->params['news_type'];
         }
-        $this->assign('news_list',$data);
-        $this->assign('news_type',$news_type);
+
+        if($data = $m_news->getNewsList($where)){
+            foreach($data as $k=>$v){
+                $data[$k]['img'] = getImageBaseUrl($v['img']);
+            }
+
+            $this->assign('news_list',$data);
+            $this->assign('news_type',$news_type);
+        }
+
 
         $this->display();
     }
@@ -44,27 +52,41 @@ class NewsController extends BaseController {
         );
 
         $this->assign('news_type',$news_type);
+        $this->assign('op_type',$type);
 
         $this->display();
     }
 
 
     /*
-     * 新增课程动作
+     * 新增新闻
      */
     public function doAddNews(){
-        $img_path = $this->uploadImg('news');
-        $where['tittle'] = $this->params['tittle'];
-        $where['content'] = $this->params['contents'];
-        $where['add_time'] = time();
-        $where['img'] = $img_path;
-        $where['is_recommend'] = $this->params['is_recommend'];
-        $where['type'] = $this->params['type'];
-        $m_coures = new \Admin\Model\NewsModel();
-        if($m_coures->doAddNews($where) !== false){
-            $this->showMsg('添加成功','index',1);
+        $op_type = $this->params['op_type'];
+        if($img_path = $this->uploadImg('news')){
+            $data['img'] = $img_path;
+        }
+
+        $data['title'] = $this->params['title'];
+        $data['content'] = $this->params['content'];
+        $data['type'] = $this->params['type'];
+        $m_news = new \Admin\Model\NewsModel();
+
+        if($op_type == 1){
+            $news_id = $this->params['id'];
+            $where = array('id'=>$news_id);
+
+            $result = $m_news->updateNews($data,$where);
         }else{
-            $this->showMsg('添加失败，请重试');
+            $data['add_time'] = time();
+            $result = $m_news->doAddNews($data);
+
+        }
+
+        if($result!== false){
+            $this->showMsg('操作成功','index',1);
+        }else{
+            $this->showMsg('操作失败');
         }
     }
 
@@ -72,12 +94,17 @@ class NewsController extends BaseController {
      * 删除课程动作
      */
     public function delNews(){
+        $op_type = $this->params['op_type'];
+        if(!in_array($op_type,array('1','2'))){
+            $this->showMsg('操作状态错误');
+        }
         $where['id'] = $this->params['id'];
         $m_coures = new \Admin\Model\NewsModel();
-        if($m_coures->delNews($where) !== false){
-            $this->showMsg('删除成功','index',1);
+        $status = ($op_type == '1')? '1':'0';
+        if($m_coures->delNews($where,$status) !== false){
+            $this->showMsg('操作成功','index',1);
         }else{
-            $this->showMsg('删除失败，请重试');
+            $this->showMsg('操作失败，请重试');
         }
     }
 

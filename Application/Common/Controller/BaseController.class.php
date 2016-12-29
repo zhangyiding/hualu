@@ -231,10 +231,10 @@ alert('%s');\r\n
             $errorinfo = C('errorinfo');
             $this->_res->msg = L($errorinfo[$this->_res->code]);
         }
-
-        if($this->_res->code == 10000 && strtolower($_SERVER['REQUEST_METHOD']) == 'post'){
-            MemberLogModel::addLog($this->user_id,$this->access,$this->params);
-        }
+//
+//        if($this->_res->code == 10000 && strtolower($_SERVER['REQUEST_METHOD']) == 'post'){
+//            MemberLogModel::addLog($this->user_id,$this->access,$this->params);
+//        }
 
         header('Content-type: application/json; charset=utf-8');
         die(json_encode($this->_res));

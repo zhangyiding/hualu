@@ -6,9 +6,8 @@ class NewsModel extends Model{
 	protected $connection = 'DB_ETAGO';
     protected $tableName = 'hl_news';
 	
-	public function getNewsList(){
-	    $result = $this->table('hl_news')
-            ->where(array('del_flag'=>0))
+	public function getNewsList($where){
+	    $result = $this->where($where)
             ->order('add_time desc ')
             ->select();
 	    return $result;
@@ -21,19 +20,24 @@ class NewsModel extends Model{
 
 
 
-    public function doAddNews($where){
-        $result = $this->table('hl_news')->add($where);
+    public function doAddNews($data){
+        $result = $this->table('hl_news')->add($data);
         return $result;
     }
 
-    public function delNews($where){
+    public function delNews($where,$status){
         $result = $this->table('hl_news')
             ->where($where)
-            ->save(array('del_flag'=>1));
+            ->save(array('del_flag'=>$status));
         return $result;
     }
 
-
+    public function updateNews($data,$where){
+        $result = $this->table('hl_news')
+            ->where($where)
+            ->save($data);
+        return $result;
+    }
 
 
 }

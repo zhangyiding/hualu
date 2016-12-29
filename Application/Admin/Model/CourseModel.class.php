@@ -7,7 +7,7 @@ class CourseModel extends Model{
     protected $tableName = 'hl_course';
 	
 	public function getCourseList(){
-	    $result = $this->table('hl_course')->where(array('del_flag'=>0))->select();
+	    $result = $this->table('hl_course')->where()->select();
 	    return $result;
 	}
 
@@ -36,8 +36,14 @@ class CourseModel extends Model{
         return $area_arr;
     }
 
-    public function doAddCoures($where){
+    public function doAddCourse($where){
         $result = $this->table('hl_course')->add($where);
+        return $result;
+    }
+    public function updateCourse($where,$data){
+        $result = $this->table('hl_course')
+            ->where($where)
+            ->save($data);
         return $result;
     }
 
@@ -46,19 +52,28 @@ class CourseModel extends Model{
         return $result;
     }
 
-    public function delCourse($where){
+    public function delCourse($where,$status){
+        $data['del_flag'] = $status;
         $result = $this->table('hl_course')
             ->where($where)
-            ->save(array('del_flag'=>1));
+            ->save($data);
         return $result;
     }
 
 
 
-    public function getSignList(){
+    public function getSignList($where){
+        $where['del_flag'] = 0;
         $result = $this->table('hl_sign_up')
-            ->where(array('del_flag'=>0))
+            ->where($where)
             ->select();
+        return $result;
+    }
+
+    public function updateSign($where,$data){
+        $result = $this->table('hl_sign_up')
+            ->where($where)
+            ->save($data);
         return $result;
     }
 
