@@ -5,8 +5,8 @@
 $ETAGO_ADMIN_DB_MASTER_ETAGO='127.0.0.1';
 $ETAGO_ADMIN_DB_SLAVE_ETAGO='127.0.0.1';
 $ETAGO_ADMIN_DB_NAME='hualu';
-$ETAGO_ADMIN_DB_USER='root';
-$ETAGO_ADMIN_DB_PWD='root';
+$ETAGO_ADMIN_DB_USER='hualu';
+$ETAGO_ADMIN_DB_PWD='hualu123';
 
 //
 ////redis缓存配置
@@ -36,8 +36,8 @@ $config_db =  array(
 		'DB_TYPE' => 'mysql',
 		'DB_HOST' => "127.0.0.1",
 		'DB_NAME' => 'hualu',
-		'DB_USER' => 'root',
-		'DB_PWD' => 'root',
+		'DB_USER' => 'hualu',
+		'DB_PWD' => 'hualu123',
 		'DB_PORT' => 3306,
 		'DB_CHARSET' => 'UTF8',
 		'DB_DEPLOY_TYPE' => 0, //数据库主从支持

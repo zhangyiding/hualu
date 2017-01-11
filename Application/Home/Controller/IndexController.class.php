@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Common\Controller\BaseController;
+use Home\Model\IndexModel;
 use Think\Controller;
 class IndexController extends BaseController {
     public function index(){
@@ -14,27 +15,43 @@ class IndexController extends BaseController {
         $this->display();
     }
 
-    //获取新闻信息
-    public function news(){
+    //新闻列表
+    public function newsList(){
         $news_type = $this->params['news_type'];
         $m_index = new \Home\Model\IndexModel();
 
         $news_list = $m_index->getNewsForType($news_type);
-        $rmd_news = array();
-        $no_rmd_news = array();
+
         foreach($news_list as $k=>$v){
             $news_list[$k]['img'] = getImageBaseUrl($v['img']);
-            if($v['is_recommend'] == 1){
-                $rmd_news = $news_list[$k];
-            }else{
-                $no_rmd_news[] = $news_list[$k];
-            }
+
         }
-        $this->assign('rmd_news',$rmd_news);
-        $this->assign('no_rmd_news',$no_rmd_news);
+
+        $this->assign('news_list',$news_list);
+
 
         $this->display();
     }
 
 
+    public function newsInfo(){
+        $news_id = $this->params['news_id'];
+        $m_index = new IndexModel();
+        if($news_info = $m_index->getNewsInfo($news_id)){
+            $this->assign('news_info',$news_info);
+        }
+        $this->display();
+    }
+
+
+
+
+    public function header(){
+        $this->display();
+    }
+
+
+    public function footer(){
+        $this->display();
+    }
 }

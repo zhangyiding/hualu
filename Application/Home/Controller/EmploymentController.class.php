@@ -8,7 +8,7 @@ namespace Home\Controller;
 use Common\Controller\BaseController;
 use Think\Controller;
 class EmploymentController extends BaseController {
-    public function index(){
+    public function system(){
         $this->display();
     }
 

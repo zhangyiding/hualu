@@ -8,7 +8,7 @@ namespace Home\Controller;
 use Common\Controller\BaseController;
 use Think\Controller;
 class TrainController extends BaseController {
-    public function index(){
+    public function cooperate(){
         $this->display();
     }
 

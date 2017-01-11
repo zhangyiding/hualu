@@ -22,9 +22,9 @@ class LoginController extends BaseController {
         session('user_id',$user_info['id']);
         session('username',$user_info['user']);
 
-        Header("Location: /admin");
+       $this->showMsg('登录成功','/admin',1);
 
-        $this->display('/index/index');
+
     }
 
 

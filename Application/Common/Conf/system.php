@@ -15,7 +15,7 @@ $config_etago = array(
         '3'=>'业界新闻'
     ),
 
-    'IMG_URL'=>'http://img.hualu.com',
+    'IMG_URL'=>'http://test.hualuedu.com',
     'RMD_CUS'=>'1',//推荐课程 recommend course
     'RCY_CUS'=>'1',//最近课程 recently course
 

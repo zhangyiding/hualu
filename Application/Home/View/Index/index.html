@@ -1,354 +1,414 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>首页-华录文化教育学院</title>
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/home.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/list.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/course.css" />
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/responsiveslides.css">
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/slider.css">
-        <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script type="text/javascript" src="__PUBLIC__/home/js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/home/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/home/js/slider.js"></script>
-	<script type="text/javascript" src="__PUBLIC__/home/js/jquery.yx_rotaion.js"></script>
-        <style type="text/css">
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>华录文化教育学院</title>
+<script type="text/javascript" src="../Public/home/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../Public/home/js/jquery.touchSlider.js"></script>
+<link rel="stylesheet" type="text/css"href="../Public/home/images/reset.css" />
+<link rel="stylesheet" type="text/css"href="../Public/home/images/css.css" />
+    <script type="text/javascript" src="../Public/home/js/common.js"></script>
+    <script type="text/javascript" src="../Public/home/js/html5shiv.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$(".main_visual").hover(function(){
+		$(".btn_prev,.btn_next").fadeIn()
+		},function(){
+		$(".btn_prev,.btn_next").fadeOut()
+		})
+	$dragBln = false;
+	$(".main_image").touchSlider({
+		flexible : true,
+		speed : 800,
+		btn_prev : $(".btn_prev"),
+		btn_next : $(".btn_next"),
+		paging : $(".flicking_con a"),
+		counter : function (e) {
+			$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+		}
+	});
+	$(".main_image").bind("mousedown", function() {
+		$dragBln = false;
+	})
+	$(".main_image").bind("dragstart", function() {
+		$dragBln = true;
+	})
+	$(".main_image a").click(function() {
+		if($dragBln) {
+			return false;
+		}
+	})
+	timer = setInterval(function() { $(".btn_next").click();}, 3000);
+	$(".main_visual").hover(function() {
+		clearInterval(timer);
+	}, function() {
+		timer = setInterval(function() { $(".btn_next").click();}, 3000);
+	})
+	$(".main_image").bind("touchstart", function() {
+		clearInterval(timer);
+	}).bind("touchend", function() {
+		timer = setInterval(function() { $(".btn_next").click();}, 3000);
+	})
+});
+</script>
 
-            /**{margin:0;padding:0;border:0;}*/
-            /*body {*/
-                /*font-family: arial, 宋体, serif;*/
-                /*font-size:12px;*/
-            /*}*/
 
 
-            -->
-        </style>
+<link href="../Public/home/texiao/texiao.css" rel="stylesheet" type="text/css" />
+<script src="../Public/home/js/slider.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#slider').slider({ speed: 500 });
+});
+</script>
 
-        <script type="text/javascript">
-            <!--//--><![CDATA[//><!--
-            function menuFix() {
-                var sfEls = document.getElementById("navfocus").getElementsByTagName("li");
-                for (var i=0; i<sfEls.length; i++) {
-                    sfEls[i].onmouseover=function() {
-                        this.className+=(this.className.length>0? " ": "") + "sfhover";
-                    }
-                    sfEls[i].onMouseDown=function() {
-                        this.className+=(this.className.length>0? " ": "") + "sfhover";
-                    }
-                    sfEls[i].onMouseUp=function() {
-                        this.className+=(this.className.length>0? " ": "") + "sfhover";
-                    }
-                    sfEls[i].onmouseout=function() {
-                        this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+</head>
 
-                                "");
-                    }
-                }
-            }
-            window.onload=menuFix;
+<body>
+<header id="header">
+</header>
+	
+    
+<div class="main_visual">
+    <div class="flicking_con">
+        <div class="flicking_inner"> <a href="#"> </a> <a href="#"> </a> <a href="#"> </a> <a href="#"> </a> <a href="#"> </a> <a href="#"> </a> </div>
+    </div>
+    <div class="main_image">
+        <ul>
+            <li><a href=""><span class="img_1"></span></a></li>
+            <li><span class="img_2"></span></li>
+            <li><span class="img_3"></span></li>
+            <li><span class="img_4"></span></li>
+            <li><span class="img_5"></span></li>
+            <li><span class="img_6"></span></li>
+        </ul>
+        
+        <a class="btn_prev"></a> <a class="btn_next"></a> </div>
+        </div>
+</div>
 
-            //--><!]]>
-        </script>
-	</head>
-	<div>
-		<div class="head">
-			<div class="wrap">
-				<div class="logobox">
-					<div class="left">
-						<img src="__PUBLIC__/home/images/logo.png" alt="华录文化教育LOGO" />
-					</div>
-					<div class="right">
-						<img src="__PUBLIC__/home/images/by.png" alt="宣传标语" />
-						<img src="__PUBLIC__/home/images/phone.png" alt="华录文化教育400服务电话" />
-					</div>
-				</div>
-				<div id="navlist">
-                    <ul id="navfocus">
-						<li><a href="/index">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-						<li><a href="/about">关于我们</a></li>
-						<li><a href="">课程设置</a>
-                            <ul>
-                                <li id="li_1"><a href="/course/unity">VR(Unity3D开发方向)</a></li>
-                                <li id="li_2"><a href="/course/ui">VR(UI设计方向)</a></li>
-                                <li id="li_3"><a href="">VR(室内设计方向)</a></li>
-                                <li id="li_4"><a href="/course/web">VR(web前端方向)</a></li>
-                                <li id="li_5"><a href="">VR(游戏模型方向)</a></li>
-                                <li id="li_6"><a href="/course/building">VR(建筑展示方向)</a></li>
-                            </ul></li>
-						<li><a href="/employment">就业体系</a></li>
-						<li><a href="/notice">学员须知</a></li>
-						<li><a href="/train">高端培训</a></li>
-					</ul>
-				</div>
+
+    <div class="pinpaibj">
+            <div class="pinpaizhongzi">品牌宣传</div>
+            <div class="pinpaiyingzi">BRAND PROMOTION</div>
+            <div class="hualuvr">华录+VR，给你最可靠的高薪承诺，给你最完善的就业保障，给你最卓越的发展之路。</div>
+    </div>
+    <div class="juxing">
+    	<div class="shang">
+        	<div class="shangzi">
+        	<div class="hualogo"><img src="../Public/home/images/tu-03.jpg" style="vertical-align: text-bottom;"/>&nbsp;华录教育<span>——教育培训的最高学府</span></div>
+            <div class="huanr">（华录文化教育学院作为中国唯一文化央企的下属教育学院，引领中国文化教育行业的创新发展，紧随世界科技前沿技术的发展步伐，致力互联网高端行业的人才培养。华录教育整合华录集团各的教育资源，结合行业各企业用人标准，开发创新的教育产品，全力打造中国互联网教育培训的最高学府。）</div>
+            </div>
+        </div>
+        <div class="xia">
+        	<div class="xiazi">
+        	<div class="xnlogo"><img src="../Public/home/images/tu-03.jpg" style="vertical-align: text-bottom;"/>&nbsp;虚拟现实<span>——前沿科技的热门行业</span></div>
+            <div class="dsa">（2016年以来，VR热度一路飙升，作为全球科技圈最热门的新技术、新领域，VR当之无愧成为市场热捧的风口。Facebook等科技巨头纷纷布局VR市场，国内各大平台陆续发布VR战略，VR企业如雨后春笋般蓬勃发展。VR行业虽仍处于起步阶段，但未来市场潜力巨大，而VR技术人才的培养成为当务之急。）<br /><br /><br />你还在等什么？>><a href="/contact/information">在线咨询</a></div>
+            <div class="ucs"></div>
+       	</div>
+    </div>
+    </div>
+    <div class="kong"></div>
+    <div class="jianjie">
+	<div class="pinpaizhongzi">课程简介</div>
+    <div class="pinpaiyingzi">COURSE INTRODUCEION</div>
+	</div>
+    <div class="kong2"></div>
+    <div class="jianjiebj">
+    	<div class="kuag">
+            <div class="tb1">
+            	<div><img src="../Public/home/images/tu-02-02.png"></div>
+            	<div class="tb1zi">VR（Unity开发方向）</div>
+                    <div class="tb1jh"><img src="../Public/home/images/tu-03.png"/>
+                	<div class="tb1jh1">Unity 3D是VR应用内容开发的主流引擎，可以轻松如三维视频游戏、建筑可视化、实时三维动画等类型互动内容的多平台的综合型游戏开发工具，是一个全面整合的专业游戏引擎。</div>
+            		</div>
 			</div>
-
-
-            <div class="slider_banner">
-                <div id="banner_tabs" class="flexslider">
-                    <ul class="slides">
-                        <li>
-                            <a title="" target="_blank" href="#">
-                                <img alt="" style="background: url(/Public/home/images/banner1.jpg) no-repeat center;" src="/Public/home/images/alpha.png">
-                            </a>
-                        </li>
-                        <li>
-                            <a title="" target="_blank" href="#">
-                                <img alt="" style="background: url(/Public/home/images/banner2.jpg) no-repeat center;" src="/Public/home/images/alpha.png">
-                            </a>
-                        </li>
-                        <li>
-                            <a title="" target="_blank" href="#">
-                                <img  alt="" style="background: url(/Public/home/images/banner3.jpg) no-repeat center;" src="/Public/home/images/alpha.png">
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="flex-direction-nav">
-                        <li><a class="flex-prev" href="javascript:;">Previous</a></li>
-                        <li><a class="flex-next" href="javascript:;">Next</a></li>
-                    </ul>
-                    <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
-                        <li><a>1</a></li>
-                        <li><a>2</a></li>
-                        <li><a>2</a></li>
-                    </ol>
-                </div>
-                <script type="text/javascript">
-                    $(function() {
-                        var bannerSlider = new Slider($('#banner_tabs'), {
-                            time: 5000,
-                            delay: 400,
-                            event: 'hover',
-                            auto: true,
-                            mode: 'fade',
-                            controller: $('#bannerCtrl'),
-                            activeControllerCls: 'active'
-                        });
-                        $('#banner_tabs .flex-prev').click(function() {
-                            bannerSlider.prev()
-                        });
-                        $('#banner_tabs .flex-next').click(function() {
-                            bannerSlider.next()
-                        });
-                    })
-                </script>
+            <div class="tb2">
+            	<img src="../Public/home/images/tu-02.png" />
+            	<div class="tb1zi">VR（UI设计方向）</div>
+                
+                <div class="tb2jh"><img src="../Public/home/images/tu-03.png"/>
+                	<div class="tb2jh1">UI设计主要涵盖平面、网页、游戏、Web前端、产品交互等多种设计，而VR的UI设计与传统的UI设计不同之处主要体现在交互设计上。</div>
+            		</div>
+                
+                
             </div>
-			<div class="clear"></div>
+            <div class="tb3">
+            	<img src="../Public/home/images/tu-02-04.png" />
+            	<div class="tb1zi2">VR（室内设计方向）</div>
+                
+                <div class="tb3jh"><img src="../Public/home/images/tu-03.png"/>
+                	<div class="tb3jh1">室内设计以"创造满足人们物质和精神生活需要的室内环境"作为室内设计为目的。VR的室内设计课程，在传统的室内设计基础上，升级加入虚拟现实技术及交互设计课程。</div>
+            		</div>
+                
+            </div>
+            <div class="tb4" >
+            	<img src="../Public/home/images/tu-02-06.png" />
+            	<div class="tb1zi3">VR（web前端方向）</div>
+                
+                <div class="tb4jh"><img src="../Public/home/images/tu-03.png"/>
+                	<div class="tb4jh1">Web前端开发，利用(X)HTML/CSS/JavaScript/Flash等各种技术进行客户端产品的开发，致力于通过技术改善用户体验。虚拟现实的实现离不开Web前端开发。</div>
+            		</div>
+                
+            </div>
+            <div class="tb5" >
+            	<img src="../Public/home/images/tu-02-05.png" />
+            	<div class="tb1zi4">VR（游戏模型方向）</div>
+                
+                <div class="tb5jh"><img src="../Public/home/images/tu-03.png"/>
+                	<div class="tb5jh1">游戏模型应用于游戏场景制作、游戏角色制作、动漫影视模型制作。而虚拟现实应用有着高质量的画面要求，这使游戏模型行业发展迅猛、人才紧缺。</div>
+            		</div>
+                
+            </div>
+            <div class="tb6">
+            	<img src="../Public/home/images/tu-02-03.png" />
+            	<div class="tb1zi5">VR（建筑展示方向）</div>
+                
+                <div class="tb6jh"><img src="../Public/home/images/tu-03.png"/>
+                	<div class="tb6jh1">利用虚拟现实技术对现实中的建筑进行三维仿真，具有人机交互性、真实建筑空间感、大面积三维地形仿真等特性。能够获得身临其境的体验。</div>
+            		</div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="kong3"></div>
+    <div class="kcjs">
+    	<div class="pinpaizhongzi">开班介绍</div>
+        <div class="pinpaiyingzi">COURSE DESCRIPTION</div>
+    </div>
+    
+    <div class="product">
+        <ul class="cf">
+          <li class="ml0"><a href="/course/unity"><img src="../Public/home/images/kaiban5.jpg" alt=""></a>
+            <p class="mt10"><a href="#">VR（Unity开发方向）开班啦！</a></p>
+            <p class="pb10">小班定制课程，一对一专业辅导</p>
+          </li>
+          <li class="ml0"><a href="/course/ui"><img src="../Public/home/images/kaiban6.jpg" alt=""></a>
+            <p class="mt10"><a href="#">VR（UI设计方向）开班啦！</a></p>
+            <p class="pb10">班级穿插制，班级之间相互辅导</p>
+          </li>
+          <li class="ml0"><a href="/course/interiorDesign"><img src="../Public/home/images/kaiban7.jpg" alt=""></a>
+            <p class="mt10"><a href="#">VR（室内设计方向）开班啦！</a></p>
+            <p class="pb10">科学化课程设置，季度制开课</p>
+          </li>
+          <li class="ml0"><a href="/course/interiorDesign"><img src="../Public/home/images/kaiban8.jpg" alt=""></a>
+          	<p class="mt10"><a href="#">VR（室内设计方向）开班啦！</a></p>
+            <p class="pb10">科学化课程设置，季度制开课</p>
+          </li>
+          <li class="ml0"><a href="/course/interiorDesign"><img src="../Public/home/images/kaiban8.jpg" alt=""></a>
+          	<p class="mt10"><a href="#">VR（室内设计方向）开班啦！</a></p>
+            <p class="pb10">科学化课程设置，季度制开课</p>
+          </li>
+        </ul>
+    </div>
+    
+<div class="kong2"></div>
+    <div class="kong2"></div>
+
+    
+    
+	<div class="jybj">
+    <div class="jiuye">
+    	<div class="pinpaizhongzi1">就业服务</div>
+        <div class="pinpaiyingzi1">EMPLOYMENT SERVICE</div>
+        <div class="hualuvr1">华录教育拥有完善强大的就业体系，是 VR培训行业的示范标杆！</div>
+    </div><div class="kong2"></div>
+    	<div class="neikuang">
+        	<div class="diyi">百分百保证就业
+            	<div class="diyinr"><span>每位学员入学即可签订保就业保薪资协议，确保学生无后顾之忧，百分百高薪就业。</span></div>
+            </div>
+            <div class="dier">全方位就业服务
+            	<div class="diernr"><span>从学员的职业规划、项目辅导、就业指导等全方位服务学生就业，并进行全程的就业跟踪，保证每位学生满意就业。</span></div>
+            </div>
+            <div class="disan">全国就业辐射网
+            	<div class="disannr"><span>华录教育就业关系网遍布全国，乃至全球，让学生可以在最心仪的地区最舒适的环境中安居就业。</span></div>
+            </div>
+            <div class="disi">多渠道人才输出
+            	<div class="disinr"><span>企业内推、就业推荐、专场招聘会、大型招聘会等多种渠道进行人才输出、帮助就业。</span></div>
+            </div>
+            <div class="diwu">强烈的市场需求
+            	<div class="diwunr"><span>企业内推、就业推荐、专场招聘会、大型招聘会等多种渠道进行人才输出、帮助就业。</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="kong3"></div>
+    <div class="kong2"></div>
+    <div class="kong2"></div>
+    <div class="jiuye">
+    	<div class="pinpaizhongzi">新闻</div>
+        <div class="pinpaiyingzi">News</div>
+    </div>
+    <div class="cxinwen">
+    	<div class="cxinwen1"><span><a href="/index/newsList?news_type=1">集团新闻</a></span></div>
+        <div class="cxinwen2"><span><a href="/index/newsList?news_type=2">行业新闻</a></span></div>
+        <div class="cxinwen3"><span><a href="/index/newsList?news_type=3">学院新闻</a></span></div>
+    </div>
+    <div class="kong3"></div>
+    <div class="jiuye">
+    	<div class="pinpaizhongzi">校园环境</div>
+        <div class="pinpaiyingzi"> CAMPUS ENVIRONMENT</div>
+    <div class="kong3"></div>
+    </div>
+    <div class="huanjing">
+    	<div class="hjtu1">
+        	<div>
+        	<div class="hjtu2"></div>
+            <div class="hjzi2"><h3>校园环境</h3>华录文化教育学院，注重学生综合能力的培训，以虚拟现实培训为主体，衍生出与之相关的虚拟现实技术展示，VR项目实训，企业内训等，这里拥有北京、全国乃至世界的互联网领先技术。学生在这里不止可以学习到符合企业需求的专业技能，更可以收获无限可能。</div>
+            </div>
+            <div>
+            <div class="hjtu3"></div>
+            <div class="hjzi3"><h3>住宿条件</h3>我们为学生提供良好的住宿服务，宿舍内干净整洁，设施齐全，每个房间配有单独卫浴。房型设置有2人间、4人间、6人间、8人间，学生可以自行选择房型。如遇家人同行，这里还配有宾馆式标间方便住宿。</div>
+            </div>
+            <div>
+            <div class="hjtu4"></div>
+            <div class="hjzi4"><h3>周边环境</h3>中国华录文化教育学院建于华录集团大厦内，坐落于石景山区，石景山区是中国北京市西部的一个市辖区，东临帝阙，西濒浑河，距天安门16千米，因“燕都第一仙山石景山”而得名，是重工业企业、高科技单位和多个国家体育运动中心聚集的地方，有首都钢铁总公司等国有大中型企业数家，还拥有从幼儿园、小学、中学到大学的完善教育体系和完备的教育设施，荟萃天泰山、翠微山、石景山、莲花河等景点，是北京市城区中山林资源最丰富、绿化覆盖率最高、人均拥有公共绿地最多的地区。</div>
+            </div>
+        </div>
+    </div>
+    <div class="kong3"></div>
+    <div class="kong3"></div>
+    <div class="jiuye">
+    	<div class="pinpaizhongzi">合作伙伴</div>
+        <div class="pinpaiyingzi">COOPERATIVE PARTNER</div>
+    </div>
+    <div class="kong2"></div>
+    <div id="slider">
+		<div class="spic">
+			<img src="../Public/home/images/zxytuod1.png" />
+			<a href="#"></a>
 		</div>
-
-		<div class="advertise advertise1">
-			<img width="1300" src="__PUBLIC__/home/images/adv.png" alt="文化央企进军VR教育 上市公司引领培训新时代" />
+		<div class="spic">
+			<img src="../Public/home/images/zxytuod2.png" />
+			<a href="#"></a>
 		</div>
-		<div class="train">
-			<div class="wrap wrap2">
-				<img width="1300" src="__PUBLIC__/home/images/edu.png" alt="华录教育、虚拟现实" />
-				<div class="consult_button"><img src="__PUBLIC__/home/images/refer.png" alt="在线咨询" /></div>
-			</div>
+		<div class="spic">
+			<img src="../Public/home/images/zxytuod3.png" />
+			<a href="#"></a>
 		</div>
-		<div class="course">
-			<div class="wrap">
-				<div class="cour_con">
-					<div class="title"> <h1>课程简介</h1><span>RECOMMEND</span> </div>
-					<div class="cour_list left">
-						<div class="cour_icon"><img src="__PUBLIC__/home/images/3D.png" alt="3Dicon" /></div>
-						<div class="cour_intr_title">VR（Unity3D开发方向）</div>
-						<div class="cour_intr">Unity 3D是VR应用内容开发的主流引擎，可以轻松如三维视频游戏、建筑可视化、实时三维动画等类型互动内容的多平台的综合型游戏开发工具，是一个全面整合的专业游戏引擎。</div>
-						<div class="info_button"><a href="">查看详情</a></div>
-					</div>
-					<div class="cour_list left">
-						<div class="cour_icon"><img src="__PUBLIC__/home/images/UI.png" alt="3Dicon" /></div>
-						<div class="cour_intr_title">VR（UI设计方向）</div>
-						<div class="cour_intr">UI设计主要涵盖平面、网页、游戏、Web前端、产品交互等多种设计，而VR的UI设计与传统的UI设计不同之处主要体现在交互设计上。</div>
-						<div class="info_button info_button2"><a href="">查看详情</a></div>
-					</div>
-					<div class="cour_list left">
-						<div class="cour_icon"><img src="__PUBLIC__/home/images/SN.png" alt="3Dicon" /></div>
-						<div class="cour_intr_title">VR（室内设计方向）</div>
-						<div class="cour_intr">室内设计以"创造满足人们物质和精神生活需要的室内环境"作为室内设计为目的。VR的室内设计课程，在传统的室内设计基础上，升级加入虚拟现实技术及交互设计课程。</div>
-						<div class="info_button info_button3"><a href="">查看详情</a></div>
-					</div>
-					<div class="cour_list left">
-						<div class="cour_icon"><img src="__PUBLIC__/home/images/DW.png" alt="3Dicon" /></div>
-						<div class="cour_intr_title">VR（Web前端方向）</div>
-						<div class="cour_intr">Web前端开发，利用(X)HTML/CSS/JavaScript/Flash等各种技术进行客户端产品的开发，致力于通过技术改善用户体验。虚拟现实的实现离不开Web前端开发。</div>
-						<div class="info_button info_button4"><a href="">查看详情</a></div>
-					</div>
-					<div class="cour_list left">
-						<div class="cour_icon"><img src="__PUBLIC__/home/images/YX.png" alt="3Dicon" /></div>
-						<div class="cour_intr_title">VR（游戏模型方向）</div>
-						<div class="cour_intr">游戏模型应用于游戏场景制作、游戏角色制作、动漫影视模型制作。而虚拟现实应用有着高质量的画面要求，这使游戏模型行业发展迅猛、人才紧缺。</div>
-						<div class="info_button info_button5"><a href="">查看详情</a></div>
-					</div>
-					<div class="cour_list left">
-						<div class="cour_icon"><img src="__PUBLIC__/home/images/JZ.png" alt="3Dicon" /></div>
-						<div class="cour_intr_title">VR（建筑展示方向）</div>
-						<div class="cour_intr">利用虚拟现实技术对现实中的建筑进行三维仿真，具有人机交互性、真实建筑空间感、大面积三维地形仿真等特性。能够获得身临其境的体验。</div>
-						<div class="info_button info_button6"><a href="">查看详情</a></div>
-					</div>					
-				</div>
-			</div>
+		 <div class="spic">
+			<img src="../Public/home/images/zxytuod4.png" />
+			<a href="#"></a>
 		</div>
-		
-		<!-- 开班信息开始  -->
-		<script>
-			document.oncontextmenu=function(e){ 
-			return false; 
-			};
-
-			function Golink(obj) {
-
-				var li = document.getElementById("subbar").getElementsByTagName("a");
-				for (i = 0; i < li.length; i++) {
-					//            if (i == n)
-					//                li[i].className = "leftmenusel";
-					//            else
-					li[i].className = "";
-
-				}
-				obj.className = "sel";
-			}
-		</script>
-		<div class="class">
-			<div class="wrap">
-				<div class="title"> <h1>开班信息</h1><span>INFORMATION</span> </div>
-				<div id="subbar">
-
-					<ul>
-                        <li><a href="/course/courseList" target="frmain" onClick="Golink(this)">全部校区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
-                        <volist name='area_list' id='vo' key="k">
-						<li><a href="/course/courseList?area_id={$k}"  class="sel" target="frmain" onClick="Golink(this)">{$vo}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
-						<!--<li><a style="margin-right:10px;" href="hbxq.html" target="frmain" onClick="Golink(this)">湖北校区</a><img src="images/xia.png" alt="" /></li>-->
-                        </volist>
-					</ul>
-
-				</div>
-			
-				<div id="content">
-					<iframe id="frmain" name="frmain" src="/course/courseList"  scrolling="no" frameborder="0"/></iframe>
-				</div>
-			</div>
+		<div class="spic">
+			<img src="../Public/home/images/zxytuod5.png" />
+			<a href="#"></a>
 		</div>
-		<!--开班信息结束-->
-        <!--新闻信息开始-->
-        <script>
-            document.oncontextmenu=function(e){
-                return false;
-            };
+		<div class="spic">
+			<img src="../Public/home/images/zxytuod6.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod7.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod9.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod10.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod11.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod12.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod13.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod14.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod15.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod16.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod17.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod18.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod19.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod20.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod21.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod22.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod23.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod24.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod25.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod26.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod27.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod28.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod29.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod30.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod31.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod32.png" />
+			<a href="#"></a>
+		</div>
+        <div class="spic">
+			<img src="../Public/home/images/zxytuod33.png" />
+			<a href="#"></a>
+		</div>
+	</div>
+    <div class="kong3"></div>
+    
 
-            function Golink(obj) {
+<footer id="footer">
 
-                var li = document.getElementById("subbar_1").getElementsByTagName("a");
-                for (i = 0; i < li.length; i++) {
-                    //            if (i == n)
-                    //                li[i].className = "leftmenusel";
-                    //            else
-                    li[i].className = "";
+</footer>
 
-                }
-                obj.className = "sel";
-            }
-        </script>
-        <div class="news">
-            <div class="wrap">
-                <div class="title">
-                    <h1>最新新闻</h1><span>HOT NEWS</span>
-                </div>
-                <div id="news_subbar">
-                    <ul>
-                        <li><a href="/index/news?news_type=1" class="sel" target="frnews" onClick="Golink(this)">集团新闻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
-                        <li><a href="/index/news?news_type=2" target="frnews" onClick="Golink(this)">行业新闻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
-                        <li><a href="/index/news?news_type=3" target="frnews" onClick="Golink(this)">学院新闻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span>|</span></li>
-                        <div style="margin-left:1280px;"><span><a style="text-decoration:none;" href="">MORE ></a></span></div>
-                    </ul>
-                </div>
-                <div id="news_content">
-                    <iframe id="frnews" name="frnews" src="/index/news?news_type=1"  scrolling="no" frameborder="0"/></iframe>
-                </div>
 
-            </div>
-        </div>
-        <!--新闻信息结束-->
-        <div class="job">
-            <div class="wrap">
-                <div class="title">
-                    <h1>就业服务</h1><span>SERVICE</span>
-                </div>
-                <img src="__PUBLIC__/home/images/job.png" alt="就业服务图片" />
-            </div>
-        </div>
-        <div class="school">
-            <div class="wrap">
-                <div class="title">
-                    <h1>校园环境</h1><span>CAMPUS</span>
-                </div>
-                <img src="__PUBLIC__/home/images/school.png" alt="校园环境图片" />
-            </div>
-        </div>
-        <div class="coactioner">
-            <div class="wrap">
-                <div class="title">
-                    <h1>合作伙伴</h1><span>COOPERATION</span>
-                </div>
-                <ul>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                </ul>
-                <ul>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                    <li><img src="__PUBLIC__/home/images/logo1.png" alt="合作伙伴1" /></li>
-                </ul>
-            </div>
-        </div>
-        <div class="edu_con">
-            <div class="wrap">
-                <ul>
-                    <li><img src="__PUBLIC__/home/images/3D1.png" alt="合作伙伴1" /><span>Unity3D开发</span></li>
-                    <li><img src="__PUBLIC__/home/images/UI1.png" alt="合作伙伴1" /><span>UI设计</span></li>
-                    <li><img src="__PUBLIC__/home/images/snsj1.png" alt="合作伙伴1" /><span>室内设计</span></li>
-                    <li><img src="__PUBLIC__/home/images/webqd1.png" alt="合作伙伴1" /><span>web前端设计</span></li>
-                    <li><img src="__PUBLIC__/home/images/jzzs1.png" alt="合作伙伴1" /><span>建筑展示</span></li>
-                    <li><img src="__PUBLIC__/home/images/yxmx1.png" alt="合作伙伴1" /><span>游戏模型</span></li>
-                    <li><img src="__PUBLIC__/home/images/zx1.png" alt="合作伙伴1" /><span>在线咨询</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="wrap wrap5">
-                <ul>
-
-                    <li><a href="">关于我们</a><span>品牌介绍</span><span>VR教育</span><span>发展优势</span></li>
-                    <li><a href="">就业体系</a><span>就业体系</span><span>人才输出</span><span>就业服务</span></li>
-                    <li><a href="">学员服务</a><span>报名流程</span><span>先学习后付款</span><span>学院地址</span><span>校园环境</span></li>
-                    <li><a href="">高端教育</a><span>院校合作</span><span>企业定制</span><span>文化扶贫</span><span>教育信息化</span></li>
-                    <li><a href="">联系我们</a><span>课程咨询</span><span>合作洽谈</span><span>文化扶贫</span><span>教育信息化</span></li>
-                </ul>
-                <div class="camp_info">
-                    <p>公司地址：北京市石景山区阜石路165号院中国华录大厦14层</p>
-                    <p>邮编 P.C：100043 传真 FAX：（010）52281678 东东007客服电话：400-0097-007</p>
-                    <p>蓝光业务咨询：86-13810308927</p>
-                    <p>京ICP备10205992号-3</p>
-                </div>
-                <div class="ew_img_box">
-                    <img src="images/ew.png" alt="公司二维码图片" />
-                    <img style="margin-top:80px;" src="images/jt.png" alt="向上的箭头" />
-                </div>
-            </div>
-        </div>
-
-        <!--百度商桥客服聊天插件-->
-        <script type="text/javascript">
-            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F097120cc5c22846fb371640911d4dae4' type='text/javascript'%3E%3C/script%3E"));
-        </script>
-
-    </body>
+</body>
 </html>
