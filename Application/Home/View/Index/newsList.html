@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>华录文化教育学院</title>
-    <link rel="stylesheet" type="text/css"href="../Public/home/images/reset.css" />
-    <link rel="stylesheet" type="text/css"href="../Public/home/images/css.css" />
-    <script type="text/javascript" src="../Public/home/js/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Public/home/images/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../Public/home/images/css.css" />
+    <link rel="stylesheet" type="text/css" href="../Public/home/css/page.css" />
+    <script src="../../Public/home/js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="../Public/home/js/common.js"></script>
+    <script type="text/javascript" src="../Public/admin/js/common.js"></script>
     <script type="text/javascript" src="../Public/home/js/html5shiv.min.js"></script>
+    <script src="../Public/home/js/jquery.twbsPagination.min.js"></script>
 </head>
 
 <body>
@@ -23,15 +26,21 @@
     
     	 <div class="ljcds">
     	<div class="ljcdsmingzi"><div class="ljcdswenzi"><p>新闻-集团新闻</p></div></div>
-             <foreach name="news_list" item="vo">
-                 <div class="ljcdak">
-                     <div class="ljcdstu1"><a href="/index/newsInfo?news_id={$vo.id}"><img src="{$vo.img}" /></a></div>
-                     <div class="ljcdsziti2"><a href="/index/newsInfo?news_id={$vo.id}">{$vo.title}</a></div>
-                     <!--<div class="ljcdsziti1"><a href="/index/newsInfo?news_id={$vo.id}">{$vo.content}</a></div>-->
-                 </div>
-             </foreach>
+             <div id="news_list">
+                 <!--<foreach name="news_list" item="vo">-->
+                     <!--<div class="ljcdak">-->
+                         <!--<div class="ljcdstu1"><a href="/index/newsInfo?news_id={$vo.id}"><img src="{$vo.img}" /></a></div>-->
+                         <!--<div class="ljcdsziti2"><a href="/index/newsInfo?news_id={$vo.id}">{$vo.title}</a></div>-->
+                         <!--&lt;!&ndash;<div class="ljcdsziti1"><a href="/index/newsInfo?news_id={$vo.id}">{$vo.content}</a></div>&ndash;&gt;-->
+                     <!--</div>-->
+                 <!--</foreach>-->
 
-            <div class="ljcdsziti5"><a href="#">>>下一页</a></div>
+             </div>
+
+            <div class="ljcdsziti5">
+                <div class="pageBox"  id="pageBox" style="text-align: center;">
+                <ul id="pagination" class="pagination m-n"></ul>
+            </div></div>
               
     </div>
 
@@ -42,6 +51,75 @@
     <footer id="footer">
 
     </footer>
+<script>
+    $(function(){
 
+        function newsList(page){
+
+            var param={};
+            param.page = page;
+            param.limit = 3;
+            if(n_type = GetQueryString('news_type')){
+                param.news_type = n_type;
+            }
+            $.ajax({
+                type:"get",
+                url:BASE_URL+"/index/getNewsList",
+                data:param,
+                success:function(data){
+                    if(data.code =='10000'){
+
+                        $('#news_list').html('');
+                        var temp = '';
+                        var list = data.result.data;
+
+                        $.each(data.result.data,function(i,n){
+                            temp+=
+                                    '<div class="ljcdak">'
+                                            +'<div class="ljcdstu1"><a href="/index/newsInfo?news_id='+n.id
+                                            +'"><img src="'+n.img+'"></a></div>'
+                                            +'<div class="ljcdsziti2"> <a href="/index/newsInfo?news_id='+n.id
+                                            +'">'+n.title+'</a></div>'
+                                            +'</div>';
+
+
+                        });
+
+                        $('#news_list').append(temp);
+
+                        //分页管理
+                        pageStatus = 0;
+                        var pageTotal = Math.ceil(parseInt(data.result.count)/(param.limit));
+
+                        $('#pagination').twbsPagination({
+                            totalPages: pageTotal,
+                            visiblePages: 7,
+                            onPageClick: function (event, page) {
+                                if(pageStatus>0){
+                                    newsList(page);
+                                }
+                            }
+                        });
+                        pageStatus++;
+                    }else {
+                        alert('暂无数据');
+                    }
+                }
+            });
+        }
+        newsList(1);
+
+
+
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+
+
+    })
+</script>
 </body>
 </html>

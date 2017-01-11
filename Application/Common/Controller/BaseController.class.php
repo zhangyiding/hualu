@@ -22,6 +22,8 @@ class BaseController extends Controller
     protected $end_time = '';
     protected $page = '1';
     protected $offset = '0';
+
+    protected $limit = '3';
     protected $pagesize = '20';
 
     public function __construct()
@@ -45,12 +47,13 @@ class BaseController extends Controller
             }
         }
 
+
         $page = intval($_GET['page']);
         $this->page = $page ? $page : $this->page;
 
         $pagesize = intval($_GET['pagesize']);
-        $this->pagesize = $pagesize ? $pagesize : (C('PAGE_SIZE') ? C('PAGE_SIZE') : $this->pagesize);
-        $this->offset = ($this->page - 1) * $this->pagesize;
+        $this->limit = $pagesize ? $pagesize : $this->limit;
+        $this->offset = ($this->page - 1) * $this->limit;
         $this->params = $params;
 
     }

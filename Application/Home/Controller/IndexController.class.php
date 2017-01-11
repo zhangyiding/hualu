@@ -20,7 +20,7 @@ class IndexController extends BaseController {
         $news_type = $this->params['news_type'];
         $m_index = new \Home\Model\IndexModel();
 
-        $news_list = $m_index->getNewsForType($news_type);
+        $news_list = $m_index->getNewsForType($news_type,$this->offset,$this->limit);
 
         foreach($news_list as $k=>$v){
             $news_list[$k]['img'] = getImageBaseUrl($v['img']);
@@ -33,6 +33,29 @@ class IndexController extends BaseController {
         $this->display();
     }
 
+
+    //新闻列表
+    public function getNewsList(){
+        $news_type = $this->params['news_type'];
+        $m_index = new \Home\Model\IndexModel();
+
+        if($count = $m_index->getNewsCount($news_type)){
+
+            $news_list = $m_index->getNewsForType($news_type,$this->offset,$this->limit);
+
+            foreach($news_list as $k=>$v){
+                $news_list[$k]['img'] = getImageBaseUrl($v['img']);
+
+            }
+
+            $this->to_back(array('count'=>$count,'data'=>$news_list));
+        }
+
+
+
+
+
+    }
 
     public function newsInfo(){
         $news_id = $this->params['news_id'];
